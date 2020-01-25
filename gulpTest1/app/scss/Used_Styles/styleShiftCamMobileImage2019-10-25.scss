@@ -1,0 +1,352 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$v3b1: (
+	btn-bg:#d99518,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	input-plchldr:#9b9b9b,
+	input-txt:#9b9b9b,
+	input-bg:transparent
+);
+$v3n-colors: (
+	btn-bg:#d99518,
+	btn-txt:#fff,
+	btn-bg-hvr:transparent,
+	input-plchldr:#bce0fd,
+	input-txt:#bce0fd,
+	input-bg:transparent
+);
+$modal: (
+	btn-bg:#d99518,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body {
+	font-family: 'Nunito', sans-serif !important;
+	background-color: #000;
+	color: #fff !important;
+}
+h1,h2,h3,h4{
+	font-family: 'Nunito', sans-serif !important;
+}
+h1,h2{
+	font-size:3.2rem !important;
+	@include tablet_style{
+		font-size:3rem !important;
+	}
+	@include max_style(550px){
+		font-size:2.7rem !important;
+	}
+	@include max_style(521px){
+		font-size:2.5rem !important;
+	}
+	@include max_style(463px){
+		font-size:2.3rem !important;
+	}
+	@include max_style(463px){
+		font-size:2rem !important;
+	}
+	@include max_style(381px){
+		font-size:1.8rem !important;
+	}
+	@include max_style(347px){
+		font-size:1.6rem !important;
+	}
+}
+h3{
+	font-size:2.2rem !important;
+	@include max_style(500px){
+		font-size:2rem !important;
+	}
+	@include max_style(442px){
+		font-size:1.8rem !important;
+	}
+	@include max_style(406px){
+		font-size:1.5rem !important;
+	}
+	@include max_style(346px){
+		font-size:1.4rem !important;
+	}
+}
+.page-wrap {
+	max-width: 1600px;
+	margin: auto !important;
+}
+.v3-q-1 {
+	padding-bottom: 0 !important;
+	img{
+    max-width: 100%;
+    width: 180px;
+}
+}
+.v3-c-2 {
+	.wp-image-1183 {
+		margin: auto;
+		width: 70%;
+		max-width: 300px;
+	}
+	@include tablet_style{
+		.wp-image-1148 {
+			display: none;
+		}
+	
+	}
+}
+.v3-n {
+	background: linear-gradient(
+		180deg,
+		rgba(28, 28, 29, 1) -80%,
+		rgba(0, 0, 0, 1) 100%
+	) !important;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+}
+.v3-l-5 {
+	background-color: #191919;
+}
+.v3-q-6 {
+	padding: 1rem 0 !important;
+	.mw-710 {
+		max-width: 1800px;
+	}
+	.aside-titl {
+		color: #fff;
+		border: 1px solid #fff;
+		width: max-content;
+		padding: 0.2rem;
+		margin: 1rem 0;
+	}
+	[class*="sctn-glry"] {
+		padding: 0 0.7rem;
+		max-width: 1800px;
+		margin: auto;
+		img {
+			margin: auto;
+		}
+	}
+	.sct-q-row {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.row-elemnt {
+		flex-basis: 100%;
+		max-width: 600px;
+		margin: auto;
+		margin-bottom: 1rem;
+		.cption {
+			margin: 1rem;
+			color: #d9a916;
+			font-weight: 700;
+			display: block;
+			#cm-dbl {
+				display: inherit;
+				font-weight: 400;
+			}
+		}
+	}
+	@include desktop_style {
+		padding: 3rem 0 !important;
+		.sctn-glry {
+			padding: 1rem;
+		}
+		.sct-q-row {
+			flex-direction: row;
+			margin-bottom: 3.5rem;
+			&.row-2-1{
+				justify-content:center;
+				.row-elemnt {
+					margin-left:2%;
+				}
+}
+		}
+		.row-prt-2 {
+			.row-elemnt {
+				flex-basis: 32%;
+				max-width: 900px;
+			}
+		}
+		.row-elemnt {
+			margin: 0;
+			flex-basis: 32%;
+		}
+	}
+}
+.v3-l-10,.v3-m-11,
+.v3-l-12 {
+	background-color: #1c1c1c;
+}
+.v3-m-11{
+	.big-image{
+		max-width:1200px;
+	}
+}
+.v3-l-15 {
+	ul {
+		list-style-type: disc !important;
+	}
+}
+.v3-l-16,
+.v3-l-17 {
+	background-color: #fff;
+	color: #000000;
+	ul {
+		list-style-type: none !important;
+
+		li {
+			margin-bottom: 1rem;
+			@include blt_pnt_style(none,50%,-1rem,absolute,after) {
+				background-color: #000;
+				border: 1px solid #000;
+				width: 0.25rem;
+				height: 1.1rem;
+				transform: translatey(-50%) rotate(45deg);
+			}
+			@include blt_pnt_style(none,50%,-1.55rem,absolute,before) {
+				background-color: #000;
+				border: 1px solid #000;
+				width: 0.3rem;
+				height: 0.5rem;
+				transform: translatey(-43%) rotate(-45deg);
+			}
+		}
+	}
+}
+@include desktop_style {
+	.v3-n {
+		position: relative;
+		.color-cta-content {
+			width: 50%;
+		}
+		.cta-lft {
+			position: absolute;
+			top: 40%;
+			left: 25%;
+			transform: translate(-50%, -50%);
+			padding-left: 1rem;
+			max-width: 500px;
+			width: 50%;
+		}
+	}
+	.v3-c-2 {
+		.wp-image-1183 {
+			position: absolute;
+			top: 25%;
+			right: 7%;
+		}
+		.v3-c-content {
+			position: relative;
+			padding: 0 !important;
+			max-width: 800px;
+			text-align: center;
+			img {
+				width: 60%;
+			}
+		}
+	}
+	.v3-l-4,
+	.v3-l-5 {
+		.half-bg-img {
+			background-size: contain;
+			background-position: 0 100%;
+			height: 90%;
+			top: auto;
+			bottom: 0;
+		}
+		.half-bg-inner {
+			padding: 12% 1rem !important;
+		}
+	}
+	.v3-c-7 {
+		background-size: 100% auto !important;
+		background-position: center center !important;
+		margin-bottom:3rem;
+		.v3-c-content {
+			padding: 5% 0 !important;
+			max-width: 400px;
+		}
+		position:relative;
+		.wp-image-1220{
+			position:absolute;
+			top:50%;
+			left:70%;
+	transform:translate(-50%,-50%);
+			width:30%;
+			max-width:650px;
+		}
+	}
+	.v3-m-8{
+		margin:6rem 0 3rem 0;
+	}
+	.v3-l-10,
+	.v3-l-12 {
+		.half-bg-img {
+			background-size: contain;
+			width: 40%;
+		}
+	}
+	.v3-l-12 {
+		.half-bg-img {
+			left: 25%;
+			transform: translateX(-50%);
+		}
+	}
+	.v3-l-15 {
+		margin: 5rem 0;
+		.half-bg-img {
+			background-size: contain;
+		}
+	}
+	.v3-c-18 {
+		background-position: center 100% !important;
+		background-size: auto 90% !important;
+	}
+}
+@include tablet_style {
+	.v3-l {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.v3-c:not(.v3-c-2) {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.v3-c-2{
+		@include cnl_padding_remove_flip(true, false);
+	}
+	.v3-c-7{
+		padding:0 !important;
+		.v3-c-inner {
+			display:none !important;
+}
+	}
+	.v3-m-8{
+		display:none !important;
+	}
+	.v3-l-16,
+	.v3-l-17 {
+		.ma {
+			padding: 0 !important;
+		}
+	}
+	.v3-c-18{
+		padding-bottom:0 !important;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal);
+}

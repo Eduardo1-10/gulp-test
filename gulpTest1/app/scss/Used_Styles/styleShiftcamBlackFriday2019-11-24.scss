@@ -1,0 +1,208 @@
+$body-color: #000;
+$golden-color:#9E794D;
+$modal: (
+btn-bg:$golden-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$golden-color,
+);
+@import '_partial1'; /*brings the mixings in*/
+.sub-hdr{
+	display:block;
+	font-size:0.5em;
+}
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.desktop-only{
+	@extend %desktop-only;
+}
+.mobile-only{
+	@extend %mobile-only;
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+ 	color: $body-color;
+ 	background-color:#000;
+	 color:#fff;
+	 text-align: center;
+}
+.v3-wrap{
+	@include desktop_style{
+		@include background_set(center 0, 100% auto,$bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/Group_1030.png');
+	}
+	h1{
+		@include h_resize(3.4rem, 1200px 1100px 868px 500px 441px 410px 380px 349px);
+	}
+	h3{
+		text-transform: uppercase;
+		letter-spacing: 0.08rem;
+	}
+	h2,h3{
+		@include h_resize(1.5rem, 918px 500px);
+	}
+	h1, h2, h3{
+		font-family: 'Roboto', sans-serif;
+		color:#fff;
+	}
+	h1,h3{
+		font-weight: 800;
+	}
+	.golden-text{
+		color: $golden-color;
+	}
+	.Ships-b{
+		text-transform: uppercase;
+		width: fit-content;
+		max-width: 100%;
+		margin: auto;
+		padding-left: 2rem;
+		@include blt_pnt_style(50%,-2rem){
+			@include background_set(center,contain,$repeat:no-repeat,$bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/f-truck.svg');
+			width:55px;
+			height: 55px;
+			transform: translatey(-50%);
+		};
+	}
+	.ribbon-b{
+		@include background_set(center,contain,$repeat:no-repeat,$bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/f-ribbon.svg');
+		position: absolute;
+		top:0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 290px;
+		max-width: 100%;
+		padding: 1rem;
+		font-weight: 900;
+	}
+	.button_style{
+		border-radius: 40px;
+		background-color:$golden-color;
+		border-color: $golden-color;
+	}
+	.offer-price{
+		font-weight: 900;
+		.retail{
+			font-weight: 300;
+			font-size: 0.45em;
+			line-height: 1;
+			text-decoration: line-through;
+		}
+		@include desktop_style{
+			font-size: 2.4rem;
+			
+		}
+		@include tablet_style{
+			font-size: 1.7rem;
+		}
+	}
+}
+.v3-q{
+	text-align: center;
+	hr{
+		color: #fff;
+		background-color: #fff;
+		height: 1px;
+		margin-bottom: 2rem;
+	}
+	@include tablet_style{
+		@include background_set(center 0, 100% auto, $bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/Group_103058.png');
+	}
+}
+.v3-l-2-wrap{
+	.v3-l{
+		background-color: #151515;
+		width: 90%;
+		margin: auto;
+	}
+
+	@include desktop_style{
+		margin-top: 2rem;
+		.v3-l{
+			padding:1rem;
+			.half-bg-img {
+			@include background_set(center,contain);
+			}
+			.half-bg-inner{
+				padding: 15% 2rem;
+				
+			}
+			.half-bg-content{
+				max-width: 330px;
+			}
+			margin-bottom: 3rem;
+	}
+	}
+	@include tablet_style{
+		margin-top: 1rem;
+		padding-bottom: 4rem;
+		@include background_set(center 100%, 110% auto, $bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/bg1.png');
+		.v3-l {		
+		padding: 1rem;
+		margin: auto;
+		max-width: 450px;
+	}}
+}
+.v3-e{
+	@include desktop_style{
+		.three-across-items{
+			display: flex;
+			align-items: stretch;
+		}
+		.three-across-item{
+			flex-basis: 33%;
+			padding: 1rem;
+			margin: 1rem;
+			img{
+				max-height: 300px;
+			}
+		}
+		.offer-text{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: space-between;
+		height: 50%;
+		}
+		.offer-img-wrap{
+			min-height: 50%;
+			width: 100%;
+		}
+	}
+	.three-across-item{
+		margin-top: 3rem;
+		padding-top: 3rem;
+		background-color: #151515;
+		position: relative;
+		img{
+			margin: auto;
+		}
+	}
+	@include tablet_style{
+		padding: 1rem;
+	}	
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

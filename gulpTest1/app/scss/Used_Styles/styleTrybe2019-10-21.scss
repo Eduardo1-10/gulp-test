@@ -1,0 +1,258 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$btn-colo-pink:#BF9780;
+$body-color:#271F16;
+$drk-bg-clr:#232225;
+$v3b1: (
+btn-bg:$btn-colo-pink,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:$body-color,
+input-txt:$body-color,
+input-bg:#F2F2F2
+);
+$v3n: (
+btn-bg:$btn-colo-pink,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:$body-color,
+input-txt:$body-color,
+input-bg:#F2F2F2
+);
+$modal: (
+btn-bg:$btn-colo-pink,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body{
+	font-family: azo-sans-web, sans-serif;
+	color:$body-color;
+	line-height: 1.9;
+	.drk-bg{
+		background-color: $drk-bg-clr;
+		color:#fff;
+	}
+	.faux-txt{
+		color: $btn-colo-pink;
+		font-size: 1.1rem;
+		text-align: center;
+		letter-spacing:0.3rem;
+	}
+}
+h1{
+	.up-hdr{
+		font-family: azo-sans-web, sans-serif;
+		display: block;
+		font-size: 0.5em;
+		color: $btn-colo-pink;
+		font-weight: 300;
+	}
+	text-align: center;
+	font-weight: 700 !important;
+}
+h1, h2{
+	font-family: whitman-display, serif;
+	@include h_resize(3.5rem,1030px  560px 500px 473px 433px 400px 390px 340px);
+}
+h2{
+	font-weight: 700 !important;
+	@include tablet_style{
+		text-align: center;
+	}
+}
+h3{
+	@include h_resize(1.7rem, 868px 600px);
+	font-family: azo-sans-web, sans-serif;
+	color: $btn-colo-pink !important;
+}
+.v3-m{
+	@include m_section($img_inr_width:870px);
+}
+.v3-l{
+	@include tablet_style{
+		@include cnl_padding_remove_flip($flip:false);
+	}
+}
+.v3-q-1{
+	padding: 1rem;
+	.mw-710{
+		p,img{
+			margin: 0;
+		}
+		max-width: 200px;
+	}
+}
+.v3-l-2{
+	
+	*{
+		text-align: center;
+	}
+}
+.v3-n-3 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include n_content($full_width:55% auto);
+}
+.v3-m-5{
+	
+	@include desktop_style {
+		@include absolute_box('.wp-image-1167', auto, 24%, -50% 0){
+			max-width:500px;
+			width: 30%;
+			bottom: 3rem;
+		};
+		
+		@include m_section($img_inr_width: 550px );
+		.big-image-inner{
+			margin: auto auto -6rem 0;
+		}
+		.ma {
+			max-width: 70%;
+			margin: -9rem 0 auto auto !important;
+			position: relative;
+			z-index: -1;
+		}
+	}
+	@include tablet_style{
+		.wp-image-1167{
+			width: 60%;
+			margin: 2rem auto 0 auto;
+		}
+	}
+	
+}
+.v3-c-6{
+	.ma {
+		display: none;
+	}
+	ul{
+		list-style-type: disc;
+		li{
+			margin-bottom: 0.7rem;
+		}
+	}
+	.faux-img{
+		margin: 1rem auto;
+		width: 80%;
+	}
+	@include desktop_style{
+		margin: 8rem 0;
+		
+		@include absolute_box('.wp-image-1176',70%,25%){
+			width: 43%;
+		};
+		.v3-c-content{
+			padding: 2%;
+		}
+		.faux-img{
+			margin: 1rem 0;
+			width: 35%;
+		}
+		.faux {
+			width: max-content;
+			max-width: 100%;
+		}
+	}
+@include tablet_style{
+	.wp-image-1168{
+		margin: 2rem auto;
+	}
+	.faux{
+		margin: 2rem 0;
+	}
+	.faux-plus{
+		display: block;
+	}
+}
+}
+.v3-l-7{
+	.half-bg-inner{
+		background-color: $drk-bg-clr;
+		color: #fff;
+	}
+	@include desktop_style{
+		margin: 15% auto 3rem auto;
+		max-width: 87%;
+		.wp-image-1194{
+			display: none;
+		}
+		.half-bg-img{
+			top:-8%;
+			margin-right: 1rem ;
+		}
+		
+		.half-bg-inner{
+			padding: 7% 2rem;
+		}
+	}
+	@include tablet_style{
+		.wp-image-1170{
+			display: none;
+		}
+		.wp-image-1194{
+			width: 190px;
+			margin: 1.5rem 0;
+		}
+	}
+}
+.v3-m-8,.v3-m-9{
+	@include desktop_style{
+		margin-top: 5rem;
+	}
+}
+.v3-l-10{
+	@include desktop_style{
+		.half-bg-inner {
+			padding: 10% 1em !important;
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-l-11{
+	@include desktop_style{
+		.half-bg-inner {
+			padding: 25% 1em !important;
+		}
+		.half-bg-img{
+			@include background_set(center center, auto 100%);
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-n:last-child {
+	background-color: $drk-bg-clr;
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content($full_width:60% auto,$color:#fff);
+@include tablet_style{
+	
+	padding: 0 1rem 1rem;
+	.color-cta-content{
+		padding-top: 0;
+	}
+	p:first-child{
+		margin: 0;
+	}
+}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

@@ -1,0 +1,195 @@
+$body-color: #0C180B;
+$green-color:#61C05A;
+$v3b1: (
+btn-bg:$green-color,
+btn-txt:$body-color,
+btn-bg-hvr:$body-color,
+btn-brdr:$green-color,
+input-plchldr:$body-color,
+input-txt:$body-color,
+input-brdr:$body-color,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#fff,
+btn-txt:$green-color,
+btn-bg-hvr:$green-color,
+btn-brdr:#fff,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:#fff,
+input-bg:transparent
+);
+$modal: (
+	btn-bg:$green-color,
+	btn-txt:$body-color,
+	btn-bg-hvr:$body-color,
+	btn-brdr:$green-color
+);
+@import '_partial1'; /*brings the mixings in*/
+.sub-hdr{
+	display:block;
+	font-size:0.5em;
+}
+
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Lato', sans-serif;
+
+ color: $body-color;
+}
+.v3-wrap{
+	h1, h2, h3{
+		
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	@include h_resize(3.1rem, 1100px 1065px 1020px 500px 430px 375px 340px);
+	}
+	h1{
+		color:#0C180B ;
+		.green-h1{
+			color: $green-color;
+		}
+	}
+	h2{
+		color:$green-color;
+		@include tablet_style{
+			text-align: center;
+		}
+	}
+}
+
+.v3-b-1 {
+	@include button_style ($v3b1,$rounded_edges:true);
+	@include input_box_style ($v3b1,$rounded_edges:true);
+	
+	@include desktop_style{
+		@include background_set(0 0, cover);
+		.v3-b-inner-content {
+			padding: 4% 0;
+		}
+		.wp-image-1218{
+			max-width: 370px;
+		}
+	}
+	@include max_min_style(1145px){
+		@include background_set(-70px 0, cover);
+	}
+	@include tablet_style{
+		background-color: #DAD0CE;
+		.v3-b-bottom-content{
+			p{
+				margin-top: 0;
+			}
+			padding-top: 0;
+		}
+		.wp-image-1218{
+			max-width: 300px;
+		}
+	}
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 10% 2rem;
+		}
+	}
+
+}
+.v3-l ,.v3-c{
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-l-2{
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center, auto 80%);
+		}
+	}
+	@include max_min_style(1100px){
+		.half-bg-img{
+			@include background_set(center, contain);
+		}
+	}
+}
+.v3-l-3{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 5% 2rem 35% 2rem;
+			@include absolute_box('.wp-image-1206', auto, 50%, -50% 0){
+				bottom: 0;
+				margin: 0;
+				width: 95%;
+			}
+		}
+	}
+}
+.v3-l-4{
+	@include desktop_style{
+		margin-top: 1rem;
+		.half-bg-img{
+			left: 75%;
+			transform: translatex(-50%);
+			width: 47.5%;
+		}
+	}
+}
+.v3-e-5{
+	.green-review{
+		font-weight: 700;
+		color: $green-color;
+	}
+	@include desktop_style{
+		margin: 3rem 0;
+		.three-across-items{
+			display: flex;
+			justify-content: space-around;
+		.three-across-item{
+			max-width: 400px;
+		}
+		}
+	}
+}
+.v3-c-6{
+	@include desktop_style{
+		.v3-c-content{
+			padding: 7% 0;
+			max-width: 570px;
+		}
+	}
+	@include tablet_style{
+		background-color: #F2F2F2;
+	}
+}
+.v3-m-8{
+	text-align: center;
+	@include tablet_style{
+		.ma{
+			width: 90%;
+			max-width: 400px;
+			margin: auto;
+		}
+	}
+}
+.v3-n:last-child {
+	@include button_style ($v3n,$rounded_edges:true);
+	@include input_box_style ($v3n,$rounded_edges:true);
+	@include n_content (#fff);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

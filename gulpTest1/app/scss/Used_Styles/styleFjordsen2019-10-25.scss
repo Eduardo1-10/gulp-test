@@ -1,0 +1,224 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$light-gray-bg:#F8F8F8;
+$red-btn:#FDB12B;
+$v3b1: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:#fff,
+input-txt:#fff,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:#fff,
+input-txt:#fff,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body{
+	font-family: proxima-nova, sans-serif;
+	font-size: 19px;
+	line-height: 1.8;
+	.white-txt{
+		color: #fff;
+	}
+	.m-wide{
+		@include m_section($text_box:800px)
+	}
+	.pd-btn {
+		padding-bottom: 2.5rem;
+	}
+	}
+	
+	h1,h2,h3{
+		font-family: bebas-neue-by-fontfabric, sans-serif;
+		@include h_resize(3.3rem, 1100px 868px 515px 460px 429px 400px 371px 344px);
+	}
+	h2,h3{
+		text-align: center;
+	}
+	.v3-m {
+		.big-image{
+			max-width: 100%;
+		}
+		@include desktop_style{
+			@include absolute_box('.m_box',auto, 17%,-50% 0){
+				max-width: 350px;
+				width: 30%;
+				bottom: 7rem;
+			};
+			
+			h2{
+				text-align: center;
+			}
+		}
+	}
+	.v3-b-1 {	
+	   @include button_style ($v3b1);
+	   @include input_box_style ($v3b1);
+	   background-color: #1D2225;
+	  
+	}
+	
+	.v3-m-2{
+		@include desktop_style{
+			@include background_set(center, 100% auto, $bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-02-w.jpg');
+		}
+		@include tablet_style{
+			@include background_set(center, 100% auto, $bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-02-M.jpg');
+			@include tablet_style{
+				.ma{
+					width: 63%;
+				}
+			}
+		}
+	}
+	.v3-m-3{
+		background-color: #707070;
+		@include desktop_style{
+			.big-image{
+				max-width: 1200px;
+			}
+		}
+	
+		@include tablet_style{
+			.ma{
+				width: 73%;
+			}
+		}
+	}
+	.v3-m-4{
+		@include desktop_style{
+			.wp-image-1172{
+				display: none;
+			}
+		}
+		@include tablet_style{
+			.ma {
+				display: none;
+			}
+			.big-image-inner{
+				padding: 0 !important;
+			}
+			h2, .m_box{
+				padding: 1rem;
+			}
+		}
+	}
+	.v3-q-5{
+		@include tablet_style{
+			padding: 1.5rem;
+			background-color: #1D2225;
+			color:#fff
+		}
+	}
+	.v3-m-7{
+		@include m_section();
+		@include tablet_style{
+			.ma {
+				display: none;
+			}
+		}
+	}
+	.v3-c-6{
+		@include desktop_style{
+			.v3-c-content{
+				padding: 18% 0;
+				max-width: 400px;
+			}
+		}
+		@include tablet_style{
+			background-color: #1D2225;
+			@include cnl_padding_remove_flip(true,false);
+		}
+	}
+	.v3-m-8{
+		@include desktop_style{
+			.wp-image-1204{
+				display: none;
+			}
+			.m_box {
+				color: #fff;
+			}
+			p:last-child{
+				font-size: 1.3rem;
+			}
+		}
+		@include tablet_style{
+			@include background_set(center, 100% auto, $bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-02-M.jpg');
+			.ma {
+				display: none;
+			}
+			.big-image-inner{
+				padding: 0 !important;
+			}
+			h2, .m_box{
+				padding: 1rem;
+			}
+		}
+	}
+	.v3-c-9{
+		text-align: center;
+		@include desktop_style{
+			.wp-image-1163{
+				display: none;
+			}
+			.v3-c-content{
+				max-width: 900px;
+				padding: 2% 0;
+			}
+			.c-in{
+				width: 70%;
+				min-width: 600px;
+				margin: auto;
+				h3{
+					font-size: 1.8rem !important;
+				}
+			}
+		}
+		@include tablet_style{
+			.ma{
+				display: none;
+			}
+			@include background_set(center,cover,$bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-08-M.jpg');
+			.wp-image-1164{
+				display: none;
+			}
+			.wp-image-1163{
+				margin: 2rem auto;
+			}
+			h3{
+				font-size: 1.5rem !important;
+			}
+		}
+	}
+	.v3-m-11{
+	
+		@include m_section();
+	}
+	.v3-n-10 {
+		@include button_style ($v3n);
+		@include input_box_style ($v3n);
+		@include n_content();
+		background-color: #1D2225;
+	}
+	.modal {
+		.modal-inner {
+			.modal-text{
+				h2 { font-size:2.3rem !important; }
+				h2,p { color:#323438 !important }
+			} 
+		}
+		@include button_style ($modal);
+	}

@@ -1,0 +1,188 @@
+/*this is my base scssfile */
+$body-color: #000;
+$v3n: (
+btn-bg:#fff,
+btn-txt:#000000,
+btn-brdr:#000000,
+btn-bg-hvr:#000000,
+input-plchldr:#000000,
+input-txt:#000000,
+input-brdr:#000000,
+input-bg:transparent
+);
+$modal: (
+btn-bg:#f5f5f5,
+btn-txt:#000000,
+btn-brdr:#000000,
+btn-bg-hvr:#000,
+);
+@import '_partial1'; /*brings the mixings in*/
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+}
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.desktop-only{
+	@extend %desktop-only;
+}
+.mobile-only{
+	@extend %mobile-only;
+}
+.blk-sqr {
+	height: 6px;
+	width: 50px;
+	background-color: #000;
+	margin: 0.7rem 0;
+}
+h1, h2, h3{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600 !important;
+	color:#000;
+	@include h_resize(3.6rem, 1600px 1200px 1105px 1053px 1002px 600px 420px 360px);
+}
+.v3-c-1{
+	.wp-image-1203{
+		@extend %mobile-only;
+	}
+	.ma{
+		display: none;
+	}
+	ul{
+		list-style-type: none;
+	
+		padding-left: 2rem;
+		li{
+			margin-bottom: 0.7rem;
+			@include  blt_pnt_style(50%,-1.5rem){
+				transform: translateY(-50%);
+				width:20px;
+					height: 20px;
+				@include background-set(center, contain, $bg_img:'https://tomsfinds.com/puzzle-box/wp-content/uploads/sites/327/2019/11/f-Arrow.svg');
+			};
+		}
+	}
+	@include desktop_style{
+		@include background-set(100% center, 70% auto, $color:#ecedef);
+		.v3-c-content{
+			padding: 1% 0;
+		}
+	}
+	@include max_style(500px){
+		.wp-image-1203{
+			margin: 1.5rem -1rem;
+			max-width: 100vw;
+			width: 100vw;
+		}
+	}
+}
+.v3-n {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#000);
+	h3{
+		margin: 1rem 0;
+	}
+}
+.v3-n-2{
+	@include tablet_style{
+	h3{
+		margin-top: 0;
+	}
+	.color-cta-content{
+	padding-top: 0;
+	}
+	padding-top: 0;
+}
+}
+.v3-l{
+	.half-bg-img{
+		@include background-set(center,contain)
+	}
+}
+.v3-m-3{
+	@include m_section();
+	margin-bottom: 7%;
+}
+.v3-l-4{
+	background-color: #f8f8f8;
+ @include desktop_style{
+	 margin: 2% 0 7% 0;
+	 .half-bg-inner{
+		 padding: 5% 1rem;
+	 }
+	 .half-bg-img{
+		height: 120%;
+		top: 50%;
+		transform: translateY(-50%);
+ }
+}
+}
+.v3-q-5{
+	padding: 0 1rem;
+	.mw-710{
+		max-width: 1100px;
+		margin: auto;
+	}
+}
+.v3-l-6{
+	.wp-image-1195{
+		@extend %mobile-only;
+	}
+	.wp-image-1194{
+		@extend %desktop-only;
+	}
+}
+.v3-l-8{
+	.half-bg-inner{
+		background-color: #f8f8f8;
+}
+@include desktop_style{
+	max-width: 1300px;
+	margin: auto;
+	.half-bg-img{
+		top:12%;
+	}
+	.half-bg-inner{
+		width: 80%;
+	}
+	.half-bg-content{
+		margin: auto 0 auto auto;
+
+	}
+}
+@include max_min_style(1170px){
+	.half-bg-inner{
+		width: 50%;
+	}
+	.half-bg-content{
+		margin: auto;
+
+	}
+}
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

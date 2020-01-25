@@ -1,0 +1,126 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$brdr-color:#E8A817;
+/* not being used for stealth wallet
+$v3b1-colors: (
+btn-bg:#19abde,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:#fff,
+input-txt:#fff,
+input-bg:transparent
+);
+$v3n-colors: (
+btn-bg:#001B30,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:#001B30,
+input-txt:#001B30,
+input-bg:transparent
+);*/
+$modal-colors: (
+btn-bg:#19abde,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	line-height: 2;
+}
+h1,h2,h3,h4{
+	font-family: 'Lato', sans-serif;
+}
+h1{
+	text-align: center;
+	font-weight:900 !important;
+	font-size: 2.5rem;
+	letter-spacing: 1rem;
+}
+h2{
+	font-size: 1.4rem;
+	font-weight:900 !important;
+}
+.quote{
+	font-weight: 900;
+	text-align: center;
+	width: 80%;
+	margin: auto;
+	&::before{
+		content: "";
+		display: block;
+		@include background_set(center,contain,$bg-img:'https://tomsfinds.com/stealth-wallet/wp-content/uploads/sites/172/2019/10/noun_quotation_1752077.png');
+		width: 25px;
+		height: 25px;
+		margin: 2rem auto;
+	}
+}
+.high-text{
+	font-weight: 900;
+	padding-left: 1.5rem;
+	border-left: 5px solid $brdr-color;
+	margin: 1.5rem auto;
+	
+}
+.v3-m {
+	padding: 0;
+	.big-image-inner{
+		max-width: 600px;
+		padding: 2.5rem 1rem;
+	}
+
+	@include desktop_style{
+		.big-image-inner{
+			max-width: 900px;
+		}
+	}
+}
+.v3-q-1{
+	background-color: #000;
+	padding: 0.5rem 1rem;
+	img{
+		margin: auto;
+		max-width: 200px;
+	}
+}
+.v3-q-2{
+	a{
+		display: block;
+		width: max-content;
+		padding: 0.3rem 1.5rem;
+		margin: auto;
+		background-color: #000;
+		color: #fff;
+	}
+	@include desktop_style{
+		padding-bottom: 20rem;
+		@include background_set(center, cover, $bg-img:'https://tomsfinds.com/stealth-wallet/wp-content/uploads/sites/172/2019/10/1-D.jpg')
+	}
+	@include tablet_style{
+		padding-bottom: 15rem;
+		@include background_set(center 100%, 100% auto , $bg-img:'https://tomsfinds.com/stealth-wallet/wp-content/uploads/sites/172/2019/10/1-M.jpg',$color:#EFF0F2)
+	}
+	@include max_style(560px){
+		padding-bottom: 10rem;
+	}
+}
+
+.modal {
+	.modal-inner {
+		.modal-text{
+			h2 { font-size:2.3rem !important; }
+			h2,p { color:#323438 !important }
+		} 
+	}
+	@include button_style (modal);
+}
+.footer{
+	@include desktop_style{
+		margin-top: 3rem;
+	}
+	
+}

@@ -1,0 +1,450 @@
+/*break point mixings*/
+@mixin tablet_style {
+	@media screen and (max-width:868px) { @content }
+}
+@mixin desktop_style {
+	@media screen and (min-width:868px) { @content }
+}
+@mixin max_style($max-style) { 
+	@media screen and (max-width:$max-style) { @content } 
+}
+@mixin max_min_style($mx-width) { 
+	@media screen and (max-width:$mx-width) and (min-width:868px) { @content } 
+}
+@mixin button_style ($block-name,$rounded_edges:false,$rounded_corners:false,$weight:400) {
+	input#gform_submit_button_5 {
+			background-color: map-get($block-name, "btn-bg");
+			border-color: map-get($block-name, "btn-brdr") ;
+			color: map-get($block-name, "btn-txt") ;
+			font-weight: $weight;
+
+		@if $rounded_edges {
+			border-radius:40px;
+		}
+
+		@if $rounded_corners {
+			border-radius: 0 10px 10px 0 ;
+		}
+
+		@include tablet_style(){
+				display: block;
+				margin: 1em auto;
+				width: 90%;
+				max-width: 400px;
+
+			@if $rounded_corners {
+					border-radius:10px;
+			}
+
+		}
+	}
+	input#gform_submit_button_5:hover {
+		background-color: map-get($block-name, "btn-bg-hvr") ;
+		border-color: map-get($block-name, "btn-bg") ;
+		color: map-get($block-name, "btn-bg") ;
+	}
+}
+@mixin input_box_style ($block-name,$rounded_edges:false,$stacked:false,$rounded_corners:false,$weight:400) {
+	input::placeholder {
+		color: map-get($block-name, "input-plchldr");
+		opacity: 0.9;
+		font-weight: $weight;
+	}
+	input:placeholder-shown {
+		color: map-get($block-name, "input-plchldr");
+		opacity: 0.9;
+		font-weight: $weight;
+	}
+	#input_5_1 {
+		background-color: map-get($block-name, "input-bg");
+		border-color: map-get($block-name, "input-brdr");
+		color: map-get($block-name, "input-txt");
+		font-weight: $weight;
+		@include tablet_style{
+			text-align:center;
+		}
+	}
+	input#input_5_1 {
+		padding: 0.9em 1.2em;
+		font-weight: $weight;
+	}
+	@if $rounded_edges {
+	@if $stacked == false{	
+		@include desktop_style{
+			#input_5_1{
+				border:none;
+			}
+			.lmlp-cta-wrap{
+				padding:0;
+				border:2px solid map-get($block-name, "input-brdr");
+				border-radius:50px;
+				margin:0 !important;
+			}
+		}
+		}
+		input#input_5_1 {
+			border-radius:40px;
+			padding: 1em 1.2em;
+		}
+	}
+	@if $rounded_corners {
+		#input_5_1 {
+			border-radius: 7px 0 0  7px ;
+		}
+	}
+	@if $stacked{
+		@include desktop_style {
+		.gform_body,
+		.gform_footer {
+			display: block;
+		}
+		#input_5_1 {
+			float: none;
+			width: 100% !important;
+			text-align:center;
+		}
+		input#gform_submit_button_5 {
+			margin-top: 1rem;
+			width: 100%;
+			max-width: 400px;
+			float:none;
+		}
+		.color-cta-content .lmlp-cta-wrap {
+			max-width: 400px;
+		}
+		@if $rounded_corners {
+			#input_5_1 {
+				border-radius: 10px ;
+			}
+			input#gform_submit_button_5 {
+				border-radius:10px;
+			}
+		}
+	}
+	}
+	
+	@include tablet_style(){
+		.lmlp.cf.lmlp-cta-wrap{
+			padding: 0 1rem;
+		}
+		input#input_5_1{
+			display: block;
+			margin: 1em auto;
+			width: 90%;
+			max-width: 400px;
+		}
+		@if $rounded_corners {
+			#input_5_1 {
+				border-radius: 7px ;
+			}
+		}
+	}
+}
+@mixin n_content($color:false,$full_width:70% auto,$aside:false,$default:false){
+	@if $color{
+			p,strong,b,h3,h2,span{
+		color: $color !important;
+	}
+		}
+	@include desktop_style{ 
+	@if $default == false {
+	@if $aside{
+		.color-cta-inner{
+			max-width: 1100px;
+			@include absolute_box('.normal-page',45%,25%){
+				width:50%;
+				max-width:500px;
+			};
+		}
+		.color-cta-content {
+			width: 50%;
+			max-width:400px;
+		}
+		.lmlp-cta-wrap {
+			max-width: 550px;
+		}
+	}
+	@if $full_width{
+	.color-cta-content {
+			max-width:nth( $full_width, 1);
+		}
+	.lmlp-cta-wrap {
+			max-width: 500px;
+			margin: nth( $full_width, 2) !important;
+		}
+	}
+}
+	@content
+	}
+}
+@function before_after($objct){
+	@if $objct == after {
+		$objct: '::after';
+			}@else if $objct == before{
+				$objct: '::before';
+	} 
+	@return $objct
+}
+@mixin blt_pnt_style($top,$left,$center: -50% -50%,$position:absolute,$objct:before,$color:false,$radius:false){
+	position:relative;
+	&#{before_after($objct)}{
+			content:"";
+			display:block;
+			position:$position;
+			left:$left;
+			top:$top;
+		@if $center{
+			transform:translate(nth($center,1),nth($center,2));
+		}
+		@if $color{
+			background-color:$color;
+		}
+		@if $radius{
+			border-radius:$radius;
+		}
+		@content
+	}
+}
+@mixin cnl_padding_remove_flip($remove_padding:true,$flip:true){
+		@if $remove_padding {
+	padding:0 !important;
+	.ma {
+			padding:0 !important;
+	}
+	.v3-c-inner{
+		padding:1rem !important;
+	}
+	}
+	@if $flip {
+		display:flex;
+		flex-direction:column-reverse;
+	}
+	@content
+}
+@mixin h_resize($font-size,$size-map) {
+	font-size: $font-size;
+	$rest:0.2rem;
+	@each $width in $size-map{
+		@include max_style($width){
+			font-size: #{$font-size - $rest};
+			$rest: $rest + 0.2rem;
+		}
+	}
+}
+@mixin background_set($positon,$size,$repeat:no-repeat,$bg_img:false,$color:false){
+	background-position:$positon ;
+	background-size:$size;
+	background-repeat:$repeat;
+	@if $bg_img {
+	background-image:url($bg_img);
+	}
+	@if $color{
+	background-color:$color;
+}
+}
+@mixin absolute_box($object-name,$top,$left,$center:-50% -50%){
+	position:relative;
+		#{$object-name} {
+			position:absolute;
+			top:$top;
+			left:$left;
+			@if $center{
+				transform:translate(nth($center,1),nth($center,2));
+			}
+			@content
+		}
+}
+@mixin flex_set($justify:false, $align:false,$flow: row nowrap){
+	display:flex;
+	flex-flow:$flow;
+	@if $justify{
+		justify-content:$justify;
+	}
+	@if $align{
+			align-items:$align;
+	}
+	
+}
+@mixin m_section($text-box:700px, $padding_off:true, $width:false) {
+	@if $width {
+		.big-image{
+			max-width: nth($width, 1 );
+			width: nth($width, 2 );
+		}
+	}
+
+	@if $padding_off {
+		padding: 0;
+	}
+		.big-image-inner{
+			@if $text-box{
+				max-width: $text-box;
+			}
+			@if $padding_off {
+				padding: 1rem;
+			}
+		}
+}
+@mixin v3_b_top_down($color:#fff,$align:left){
+.v3-b-top-content,.v3-b-bottom-content{
+	color:$color;
+	text-align: $align;
+}
+}
+.v3-t-wrap .v3-l{
+	display: flex;
+	@include tablet_style{		
+		flex-flow: column nowrap;
+	}
+}
+@mixin t_section($l-width:false,$img-basis:false,$text-basis:false,$flex:0 1 50%,$mobile-direction:false,$no_padding:true){
+	@include desktop_style{
+		@if $l-width{
+			.v3-l{
+				width: nth($l-width , 1 );
+				max-width: nth($l-width , 2 );
+				margin: nth($l-width , 3 );
+				@content
+			}
+		}
+		@if $flex {
+		.half-bg-img-t{
+			flex: $flex;
+		}
+		.half-bg-inner-t{
+			flex: $flex;
+		}
+	}
+		@if $img-basis {
+			.half-bg-img-t{
+				flex-basis: $img-basis;
+			}
+		}
+		@if $text-basis {
+			.half-bg-inner-t{
+				flex-basis: $text-basis;
+			}
+		}
+	}
+	@include tablet_style{
+		@if $mobile-direction {
+			.v3-l{
+				flex-flow: $mobile-direction nowrap;
+			}
+		}
+		@if $no_padding{
+			.ma{
+				padding: 0;
+			}
+		}
+	}
+}
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.desktop-only{
+	@extend %desktop-only;
+}
+.mobile-only{
+	@extend %mobile-only;
+}
+@mixin uls-wraper($flow:column,$mobile:false){
+	display: flex;
+	& > ul {
+		flex:0 1 auto;
+		@content;
+		&.ul-half{
+			flex-basis: 50%;
+		}
+	}
+	@include desktop_style{
+		& > ul {
+			&.ul-third-d{
+				flex-basis: 33%;
+			}
+			&.ul-two-thirds-d{
+				flex-basis: 66%;
+			}
+			&.ul-half-d{
+				flex-basis: 50%;
+			}
+		}
+	}
+	@include tablet_style{
+		flex-flow: $flow nowrap;
+		@if $mobile  {
+			& > ul {
+				&.ul-third-m{
+					flex-basis: 33%;
+				}
+				&.ul-two-thirds-m{
+					flex-basis: 66%;
+				}
+				&.ul-half-m{
+					flex-basis: 50%;
+				}
+			}
+		}
+	}
+}
+%flex-wrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	@include desktop_style(){
+		flex-flow: row nowrap;
+		.flex-full-desktop{
+			flex-basis: 100%;
+		}
+		.flex-two-thirds-desktop{
+			flex-basis: 66%;
+		}
+		.flex-half-desktop{
+			flex-basis: 50%;
+		}
+		.flex-one-third-desktop{
+			flex-basis: 33%;
+		}
+		.flex_quarter-desktop{
+			flex-basis: 25%;
+		}
+		.flex_fifth-desktop{
+			flex-basis: 20%;
+		}
+	}
+	@include tablet_style(){
+		flex-flow: column nowrap;
+		&.flex-wrap__reverse{
+			flex-flow: column-reverse nowrap;
+		}
+		&.flex-wrap__rowwrap-mobile{
+			flex-flow: row wrap;
+		}
+		.flex-full-mobile{
+			flex-basis: 100%;
+		}
+		.flex-two-thirds-mobile{
+			flex-basis: 66%;
+		}
+		.flex-half-mobile{
+			flex-basis: 50%;
+		}
+		.flex-one-third-mobile{
+			flex-basis: 33%;
+		}
+		.flex_quarter-mobile{
+			flex-basis: 25%;
+		}
+		.flex_fifth-mobile{
+			flex-basis: 20%;
+		}
+}
+}

@@ -1,0 +1,460 @@
+$body-color: #262626;
+$dark-gray:#262626;
+$orange-color:#E48126;
+$v3b1: (
+btn-bg:$orange-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$orange-color,
+input-plchldr:rgb(43, 43, 43),
+input-txt:rgb(43, 43, 43),
+input-brdr:$orange-color,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$orange-color,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+btn-brdr:$orange-color,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:$orange-color,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$orange-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$orange-color,
+);
+@import '_partial1'; /*brings the mixings in*/
+@import 'ProximaNova/proximaNova';
+.sub-hdr{
+	display:block;
+	font-size:0.5em;
+}
+.v3-wrap{
+	h1,h2,h3{
+		font-family: "proxima-nova",sans-serif;
+	}
+	h1, h2{
+		color:$body-color;
+		text-align: left;
+	@include h_resize(2.7rem, 1100px 610px 510px 467px 420px 380px);
+	}
+	h1{
+		font-weight: 800;
+	}
+	h3{
+		color: $body-color;
+		font-weight: 800;
+		@include h_resize(1.4rem, 868px);
+	}
+	.dark-gray-background{
+		background-color:$dark-gray;
+		color:#fff;
+		h1,h2,h3{
+			color:#fff;
+		}
+	}
+	.light-gray-background{
+		background-color:#F0F0F0;
+	}
+	.uls-wraper{
+		@include flex_set();
+	}
+	.green-check{
+		list-style-type: none;
+		padding-left: 2.2rem;
+		li{
+			@include blt_pnt_style(0,-1.5rem){
+				@include background_set(center,contain,$bg-img:'https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/noun_Check-Mark_228368.svg');
+			width:20px;
+			height: 20px;
+			};
+			margin-bottom: 1rem;
+		}
+	}
+	.orange-text{
+		color:$orange-color;
+	}
+	.orange-rectangle{
+		background-color: $orange-color;
+		width: 50px;
+		height: 2px;
+		margin: 1rem 0;
+	}
+	.strong{
+		font-weight: 800;
+	}
+	.img-aside{
+		@include desktop_style{
+			padding-left: 4rem;
+			@include blt_pnt_style(50%,-2rem){
+				transform: translateY(-50%);
+				width: 100px;
+				height: 100px;
+				@include background_set(center,contain);
+			};
+		}
+		@include tablet_style{
+			padding-left: 3rem;
+			@include blt_pnt_style(50%,-0.5em){
+				transform: translateY(-50%);
+				width: 2em;
+				height: 2em;
+				@include background_set(center,contain);
+			};
+		}
+		@include max_style(467px){
+			@include blt_pnt_style(50%,0){};
+		}
+	}
+	.min-head {
+		width: min-content;
+		.dib{
+			width: max-content;
+		}
+	}
+	.no-ma-mobile {
+		@include tablet_style{
+			.ma{
+				display: none;
+			}
+		}
+	}
+}
+
+.v3-t-wrap{
+	.v3-l{
+		display: flex;
+		flex: 0 1 50%;
+	}
+	@include desktop_style{
+		&.r-reverse{
+			.v3-l{
+				flex-flow: row-reverse nowrap;
+			}
+		}
+		.v3-l{
+			flex-flow: row nowrap;
+		}
+		.half-bg-img-t{
+			background-size: contain;
+		}
+	}
+	@include tablet_style{
+		.v3-l{
+			flex-flow: column nowrap;
+		}
+		&.c-reverse{
+			.v3-l {
+				flex-flow: column-reverse nowrap;
+			}
+		}
+		
+	}
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: "proxima-nova",sans-serif;
+ 	color: $body-color;
+}
+
+.v3-b-1 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include desktop_style{
+		@include background_set(100% 0, auto 100%);
+		.v3-b-inner-content{
+			padding:5% 0;
+			max-width: 600px;
+		}
+		.b-section-image {
+			margin: 3rem 1rem 3rem 0;
+		}
+	}
+	@include max_min_style(1280px){
+		@include background_set(0 0, auto 100%);
+	}
+	@include tablet_style{
+		background-color: #fff;
+		.b-section-image {
+			margin: 1.5rem 0;
+		}
+		.v3-b-bottom-content{
+			color:$body-color;
+		}
+	}
+}
+.v3-t-2-wrap{
+	@include desktop_style{
+		.half-bg-img-t{
+			flex-basis: 40%;
+		}
+		.half-bg-inner-t{
+			padding: 6% 1rem;
+			flex-basis: 60%;
+		}
+		.half-bg-content-t{
+			max-width: 700px;
+		}
+	}
+	@include tablet_style{
+		img{
+			margin: auto;
+		}
+	}
+}
+.v3-t-3-wrap{
+	@include desktop_style{
+		@include flex_set($justify:flex-end);
+		.v3-l{
+			flex-basis: 90%;
+		}
+		.half-bg-img-t{
+			background-position-y: 100%;
+		}
+		.half-bg-inner-t{
+			padding: 10% 1rem;
+
+		}
+		.half-bg-content-t{
+			max-width: 400px;
+		}
+	}
+	@include tablet_style{
+		.v3-l{
+			flex-direction: column-reverse;
+		}
+	}
+}
+.v3-t-4-wrap{
+	.img-aside{
+		width: min-content;
+		&::before{
+			background-image: url('https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/f-Section-04.svg');
+		}
+	}
+	.v3-l.v3-l-4 .half-bg-content-t .uls-wraper{
+		@extend %desktop-only;
+	}
+	@include desktop_style{
+		.half-bg-inner-t{
+			@include absolute_box('.gif-wrap',50%,auto,85% -50%){
+				right: 0;
+				border-radius: 100%;
+				overflow: hidden;
+				width: 220px;
+				height: 220px;
+				img{
+     				max-width: 500%;
+    				max-height: 100%;
+    				position: relative;
+    				right: 120px;
+					left: auto;
+				}
+				};
+				p{
+					max-width: 450px;
+				}
+			}
+		.half-bg-img-t{
+			flex-basis: 55%;
+		}
+		.half-bg-inner-t{
+			flex-basis: 40%;
+		}
+	}
+	@include tablet_style{
+		.v3-l{
+		flex-direction:column-reverse;
+	}
+	.ma{
+		padding-top: 0;
+	}
+	.half-bg-inner-t{
+		padding-bottom: 0;
+	}
+	.uls-wraper+p{
+		margin: 0;
+	}
+	}
+}
+.v3-q-5 {
+	@extend %mobile-only;
+	@include tablet_style{
+		.mw-710 {
+			max-width: 500px;
+			margin: 1.5rem auto;
+		}
+		.green-check {
+			flex-basis: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+	}
+}
+.v3-m-6{
+	@include desktop_style{
+		padding-bottom: 2rem;
+		.big-image{
+			text-align: center;
+		}
+	}
+	
+}
+.v3-c-7{
+	.img-aside{
+		&::before{
+			background-image: url('https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/f-Section-06A.svg');
+		}
+		
+		@include desktop_style{
+			padding-left: 4rem;
+			@include blt_pnt_style(50%,-120px){
+				transform: translateY(-50%);
+				width: 100px;
+				height: 100px;
+				@include background_set(center,contain);
+			};
+		}
+		@include tablet_style{
+			padding-left: 0;
+			@include blt_pnt_style(auto,auto,$position:static){
+				transform: translateY(0);
+				margin: 1rem auto;
+				width: 2em;
+				height: 2em;
+				@include background_set(center,contain);
+			};
+		}
+		
+	
+	}
+
+	.normal-page{
+		img{
+			width: 70%;
+			margin: 1.5rem auto;
+		}
+	}
+	@include desktop_style{
+		@include background_set(-100px 0, auto 100%);
+		.v3-c-content{
+			padding: 5% 0;
+			max-width: 600px;
+		}
+		.normal-page h2.strong.img-aside{
+			@include h_resize(2.1rem, 1100px);
+			padding-left: 0;
+		}
+
+	}
+	@include max_min_style(1262px){
+		@include background_set(-150px 0, auto 100%);
+	}
+	@include max_min_style(1203px){
+		@include background_set(-200px 0, auto 100%);
+	}
+	@include max_min_style(1140px){
+		@include background_set(-270px 0, auto 100%);
+	}
+	@include max_min_style(1048px){
+		@include background_set(-300px 0, auto 100%);
+	}
+	@include tablet_style{
+		@include background_set(center,cover,$bg-img:'https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Section-_07-M.jpg');
+	}
+}
+.v3-t-8-wrap {
+	.img-aside{
+		&::before{
+			background-image: url('https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Group_215.svg');
+		}
+	}
+	@include desktop_style{
+		@include background_set(center, cover,$bg-img:'https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Section-07.jpg');
+		.half-bg-content-t{
+			max-width: 450px;
+		}
+		.half-bg-img-t{
+			flex-basis: 55%;
+		}
+	
+		.half-bg-inner-t{
+			flex-basis: 40%;
+		}
+	}
+	@include tablet_style{
+		@include background_set(center,cover,$bg-img:'https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Group-215-1-1.jpg');
+		.green-check{
+			color: #fff;
+			text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+		}
+	}
+}
+.v3-t-9-wrap {
+	.img-aside{
+		&::before{
+			
+			background-image: url('https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Group-216.svg');
+		}
+	}
+}
+.v3-t-10-wrap {
+	.img-aside{
+		&::before{
+			background-image: url('https://tomsfinds.com/fix-international/wp-content/uploads/sites/345/2019/12/Group-217.svg');
+		}
+	}
+	@include desktop_style{
+		.half-bg-inner-t{
+			padding: 4% 1rem;
+		}
+		.negative-margin-image {
+			margin: 3rem auto -14rem auto;
+
+		}
+	}
+	@include tablet_style{
+		.v3-l{
+			flex-direction: column-reverse;
+			.ma{
+				padding: 0;
+			}
+		}
+	}
+}
+.v3-c-11{
+	@include desktop_style{padding: 0 1rem;
+		.v3-c-content{
+			padding: 0;
+			img{
+				margin: -7rem 0 0 0;
+			}
+		} 
+	}
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#fff);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

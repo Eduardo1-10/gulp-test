@@ -1,0 +1,287 @@
+/*Variables*/
+$body-color: #000;
+$sections-max-width: 1600px;
+$sections-width:87%;
+$btn-color:#F18805;
+$gold-color:#A6947C;
+$light-gray-bg:#f8f8f8;
+/*Button objects*/
+$v3b1: (
+btn-bg:$btn-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$btn-color,
+input-plchldr:#6F6F6F,
+input-txt:#6F6F6F,
+input-brdr:#F7F7F7,
+input-bg:#F7F7F7
+);
+
+$modal: (
+	btn-bg:$btn-color,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$btn-color,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	color: $body-color;
+	line-height: 1.8 ;
+}
+.v3-wrap{
+	h1, h2,h3{
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	h1, h2{
+		color:$gold-color;
+		@include h_resize(2.5rem, 1100px 450px 415px 382px 346px);
+	}
+	h3{
+		@include h_resize(2rem, 1100px);
+	}
+	.sub-hdr{
+	display:block;
+	font-size:0.5em;
+	}
+}
+/*backgrounds*/
+.light-gray-bg{
+	.v3-l,&.v3-d{
+		background-color: $light-gray-bg;
+	}
+}
+/*layout*/
+.full-width-m-section{
+	@include desktop_style{
+		.big-image{
+			max-width: 100%;
+		}
+	}
+}
+.max-width-section{
+	max-width: $sections-max-width;
+	width: $sections-width;
+	margin: auto;
+}
+.max-width-t-section{
+	@include t_section($l-width:$sections-max-width $sections-width auto, $no-padding:false);
+	@include tablet_style{
+		.v3-l{
+		width: $sections-width;
+		max-width: 700px;
+		margin: auto;
+	}
+}
+}
+.max-width-m-section{
+	@include m_section($text-box:600px,$width:$sections-max-width $sections-width auto);
+}
+/*generic rules*/
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}
+.v3-t-wrap {
+	@include desktop_style{
+		.half-bg-img-t{
+			@include background_set(center, contain);
+		}
+	}
+}
+.v3-n{
+	@include desktop_style{
+		padding: 0 ;
+		.color-cta-content{
+			padding: 2% 0 4%;
+		}
+	}
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include n_content (#fff);
+}
+/*section specific scss*/
+.v3-m-1{
+	@include desktop_style{
+		text-align: center;
+		margin-bottom: 5%;
+	}
+}
+.v3-n-3 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+}
+.v3-t-4-wrap {
+	@include t_section($text-basis:40%,$img-basis:60%,$mobile-direction: column-reverse,$no-padding:false);
+	@include desktop_style{
+		.normal-page{
+			margin: 0;
+		}
+		.half-bg-inner-t {
+			padding-left: 0;
+		}
+	}
+}
+.v3-c-5{
+	.v3-c-content {
+		color: #fff;
+		max-width: 400px;
+	}
+	@include desktop_style{
+		margin-top: 4%;
+		margin-bottom: 4%;
+		@include background_set(0 0, cover);
+		.v3-c-content{
+			padding: 15% 0;
+		}
+	}
+	@include tablet_style{
+		margin-top: 10%;
+		margin-bottom: 8%;
+		background-color: #0e1824;
+	}
+}
+.v3-m-6{
+	@include m_section($text-box:1000px);
+	@include desktop_style{
+		text-align: center;
+	}
+}
+.v3-m-7{
+	@include desktop_style{
+		margin: 4% auto;
+	}
+	@include tablet_style{
+		margin: 7% auto 15% auto;
+	}
+}
+.v3-t-8-wrap{
+ @include t_section($mobile-direction: column-reverse)
+}
+.v3-t-9-wrap{
+	@include t_section($mobile-direction: column-reverse);
+	ul{
+		list-style-type: disc;
+		li{
+			margin-bottom: 0.7rem;
+		}
+	}
+	@include tablet_style{
+		margin: 5% auto 10% auto;
+	}
+}
+.v3-d-10{
+	padding: 3% 1rem;
+	.two-item{
+		background-color: #fff;
+	}
+	.name{
+		font-weight: 700;
+		color:$gold-color;
+	}
+	@include desktop_style{
+		.two-items{
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+		}
+		.two-item{
+			flex-basis: 48%;
+			padding: 2rem 3rem;
+			margin:0;
+		}
+		.two-item-content{
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			height: 100%;
+		}
+	}
+	@include tablet_style{
+		.two-item{
+			margin-top: 1rem;
+		}
+	}
+}
+.v3-m-11{
+	@include desktop_style{
+		text-align: center;
+	}
+}
+.v3-t-12-wrap {
+	@include t_section($text-basis:49.5%,$img-basis:49.5%,$mobile-direction:column-reverse);
+	.check-bullet{
+		list-style-type: none;
+		li{
+			@include blt_pnt_style(50%,-1rem){
+				@include background_set(center,contain,$bg-img:'https://tomsfinds.com/first-class-feel/wp-content/uploads/sites/353/2020/01/f-Group_3.svg');
+				width: 18px;
+				height: 18px;
+			};
+		}
+
+	}
+	@include desktop_style{
+		margin: 3% auto 5% auto;
+		.half-bg-content-t{
+			width: fit-content;
+		}
+
+		.half-bg-inner-t{
+			margin-right: 1%;
+			background-color: $light-gray-bg;
+		}
+	}
+	@include max_min_style(1300px){
+		.half-bg-inner-t{
+			padding: 7% 0;
+		}
+	}
+	@include tablet_style{
+		margin: 10% auto 2% auto;
+		.v3-l{
+			background-color: $light-gray-bg;
+		}
+		.half-bg-content-t{
+			padding: 0 1rem;
+		}
+	}
+}
+.v3-q-13{
+	.founder-box{
+		text-align: center;
+		margin-top:1.5rem;
+		img{
+			margin: auto;
+			max-width: 200px;
+		}
+		.founder-name{
+			font-size: 1.7rem;
+			.Role{
+				text-transform: uppercase;
+				display: block;
+				font-size: 0.5em;
+			}
+		}
+	}
+	@include desktop_style{
+		text-align: center;
+	}
+	
+}

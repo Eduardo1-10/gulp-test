@@ -1,0 +1,329 @@
+/*Variables*/
+$body-color: #45403E;
+$headlines-color:#0C0402;
+$spoke-and-piston-brown:#CA6C3E;
+$light-gray-bg-color:#F2EFEC;
+$sections-max-width:1600px;
+$sections-width:90%;
+/*Button objects*/
+$v3b1: (
+btn-bg:$spoke-and-piston-brown,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$spoke-and-piston-brown,
+input-plchldr:#595959,
+input-txt:#595959,
+input-brdr:#F7F7F7,
+input-bg:#F7F7F7
+);
+$v3n: (
+	btn-bg:$spoke-and-piston-brown,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$spoke-and-piston-brown,
+	input-plchldr:#595959,
+	input-txt:#595959,
+	input-brdr:#fff,
+	input-bg:#fff
+);
+$modal: (
+	btn-bg:$spoke-and-piston-brown,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$spoke-and-piston-brown,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: $body-color;
+	line-height: 1.8;
+}
+.v3-wrap{
+	h1, h2, h3{
+		color: $headlines-color;
+		font-family: 'Lora', serif;
+		@include h_resize(2.3rem, 1300px 1275px 1100px 455px);
+	}
+	.sub-hdr{
+	display:block;
+	font-size:0.7em;
+	}
+	.three-in-caption{
+		text-align: left;
+		font-weight: 900;
+	}
+}
+.max-width-section{
+	max-width: $sections-max-width;
+	width: $sections-width;
+	margin: auto;
+}
+.max-width-e-section{
+	.three-across-items{
+		max-width: $sections-max-width;
+		width: $sections-width;
+	}
+	.three-across-item{
+		padding: 0;
+	}
+	@include desktop_style{
+		.three-across-items{
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+		}
+		.three-across-item{
+			flex-basis: 32%;
+			margin: 0;
+			max-width: 100%;
+		}
+	}
+}
+.max-width-t-section{
+	@include t_section($l-width:$sections-max-width $sections-width auto, $no-padding:false);
+	@include tablet_style{
+		.v3-l{
+		width: $sections-width;
+		max-width: 700px;
+		margin: auto;
+	}
+}
+}
+.max-width-m-section{
+	@include m_section($width:$sections-max-width $sections-width auto);
+}
+
+.t-section-half-content-bg{
+	@include t_section($text-basis:49.5%,$img-basis:49.5%);
+	@include desktop_style{
+		.half-bg-inner-t{
+			margin-right: 1%;
+			background-color: $light-gray-bg-color;
+		}
+	}
+}
+.v3-m-1{
+	background-color: #f0efed;
+}
+.v3-n-2 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+}
+.v3-m-3{
+	background-color: #ddd8d4;
+}
+.v3-m-1,.v3-m-3 {
+	@include m_section($text-box:750px);
+	@include desktop_style{
+		@include absolute_box('.big-image-inner',17%,50%){
+			text-align: center;
+			p{
+				max-width: 600px;
+				margin: auto;
+			}
+		}
+	}
+	@include max_min_style (1150px){
+		padding-top: 3rem;
+	}
+	@include max_min_style (1050px){
+		padding-top: 6rem;
+	}
+	@include tablet_style{
+		.big-image-inner{
+			max-width: 450px;
+		}
+	}
+}
+.v3-e-4{
+ @include desktop_style{
+	 margin-top:3%;
+ }
+ @include tablet_style{
+	 padding-top: 2rem;
+	 padding-bottom: 0;
+	 .three-across-item{
+		 margin-bottom: 1.5rem;
+	 }
+ }
+}
+.v3-e-5{
+	@include desktop_style{
+		margin-bottom: 2%;
+	}
+	@include tablet_style{
+		padding-top: 0;
+		padding-bottom: 0;
+		.three-across-item{
+			margin-bottom: 2rem;
+		}
+	}
+}
+.v3-m-6{
+	@include desktop_style{
+		margin-bottom: 3%;
+	}
+	@include tablet_style{
+		
+		.big-image{
+			max-width: 420px;
+			margin: auto;
+		}
+
+	}
+}
+.v3-t-7-wrap{
+	@include t_section($mobile-direction:column-reverse);
+@include desktop_style{
+	text-align: center;
+	.normal-page{
+		max-width: 450px;
+	}
+}
+@include tablet_style{
+	background-color: $light-gray-bg-color;
+	text-align: left;
+	padding-bottom: 2rem;
+	margin-top: 15%;
+}
+}
+.v3-q-8{
+	padding: 0;
+	.v3-q-inner{
+		max-width: 100%;
+	}
+	@include desktop_style{
+		margin: 4% auto; 
+		text-align: center;
+		p{
+			max-width: 670px;
+			margin: auto;
+		}
+	}
+}
+.v3-t-9-wrap{
+	img{
+		margin: 1rem auto;
+	}
+	text-align: center;
+	@include desktop_style{	
+		.normal-page{
+			max-width: 450px;
+		}
+		.half-bg-inner-t{
+			margin-left: 1%;
+			margin-right: 0;
+			padding: 7% 1rem;
+		}
+
+	}
+	@include tablet_style{
+		.half-bg-inner-t{
+			background-color: $light-gray-bg-color;
+		}
+	}
+}
+.v3-c-10{
+		@include desktop_style{
+			margin: 3% auto;
+			@include background_set(0 0, auto 100%,$color:#e3e0db);
+			.the-text {
+				text-align: center;
+				margin-bottom: 7rem;
+			}
+		}
+		@include max_min_style(1175px){
+			@include background_set(-50px 0, auto 100%,)
+		}
+		@include max_min_style(1116px){
+			@include background_set(-120px 0, auto 100%,)
+		}
+		@include max_min_style(1016px){
+			@include background_set(-200px 0, auto 100%,)
+		}
+		@include tablet_style{
+			margin-top: 10%;
+			@include cnl_padding_remove_flip(true,false);
+			@include background_set(0 100%, 100% 100%,$bg-img:'https://tomsfinds.com/spoke-and-piston/wp-content/uploads/sites/357/2020/01/Section_7b-m.jpg');
+			.normal-page img{
+				width: 90%;
+				max-width: 300px;
+				margin: 1.5rem auto;
+			}
+		}
+}
+.v3-n:last-child {
+	
+	background-color: $light-gray-bg-color;
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#0C0402,$full_width:45% auto){
+		.n-section-h2 {
+			.sub-hdr{
+				margin-bottom: 2rem;
+			}
+			margin-bottom: 5rem;
+			& + p{
+				margin-bottom: 3rem;
+			}
+		}
+		.color-cta-content{
+			padding: 10% 0;
+		}
+		@include absolute_box('.n-side-img',0,0,0% 0%){
+			width: 50%;
+			height: 100%;
+			@include background_set(100% center, cover,$bg-img:'https://tomsfinds.com/spoke-and-piston/wp-content/uploads/sites/357/2020/01/Section_8_-_w.jpg')
+		}
+		width: $sections-width;
+		max-width: $sections-max-width;
+		margin: 5% auto;
+	};
+
+	.color-cta-content--right{
+		text-align: center;
+	}
+	@include max_min_style(1200px){
+		@include button_style ($v3n);
+		@include input_box_style ($v3n,$stacked:true);
+		.color-cta-content{
+			padding: 5% 0;
+		}
+		.n-section-h2 {
+			.sub-hdr{
+				margin-bottom: 1rem;
+			}
+			margin-bottom: 3rem;
+			& + p{
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	@include max_style(540px){
+		.n-top-img {
+			max-width: 100vw;
+			margin:-2rem  -1rem 0rem -1rem;
+		}
+	}
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

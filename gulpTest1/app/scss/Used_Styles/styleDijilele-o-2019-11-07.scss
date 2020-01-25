@@ -1,0 +1,272 @@
+/*this is my base scssfile */
+$body-color: #000;
+$v3b1: (
+btn-bg:#000000,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+input-plchldr:rgb(43, 43, 43),
+input-txt:rgb(43, 43, 43),
+input-brdr:rgb(43, 43, 43),
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#B5A594,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+btn-brdr:#B5A594,
+input-plchldr:rgb(43, 43, 43),
+input-txt:rgb(43, 43, 43),
+input-brdr:#E3E3E3,
+input-bg:#E3E3E3
+);
+$modal: (
+btn-bg:#000000,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+);
+@import '_partial1'; /*brings the mixings in*/
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+ font-family: 'Montserrat', sans-serif;
+ sup{
+	 font-size: 0.6em;
+ }
+}
+.black-bg{
+	background-color: #000;
+	h2,p{
+		color: #fff;
+	}
+}
+h1, h2{
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	line-height: 1.1 !important;
+	margin-bottom: 0.35em !important;
+	.sub-hdr{
+		font-size: 1rem;
+		letter-spacing: 0.03rem;
+		font-family: 'Montserrat', sans-serif;
+		display: block;
+		margin: auto;
+		width: max-content;
+		max-width: 100%;
+		color: #B09F8D;
+	}
+&.txt-left{
+	text-align: left;
+	.sub-hdr{
+		margin: 0;
+	}
+}
+@include h_resize(4.8rem, 1130px 1084px 1045px 1000px 867px 500px 473px 451px 430px 409px 388px 366px 345px);
+}
+h3{
+	font-family: 'Montserrat', sans-serif;
+	color: #B09F8D;
+	margin: 1.2rem 0;
+	@include h_resize(2.2rem, 1100px);
+}
+
+.v3-n {
+	background-color: #F8F8F8;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include n_content (#000);
+	sup{
+		color: #000 !important;
+	}
+	h3{
+		color:#B09F8D !important;
+	}
+}
+.v3-c-1{
+	@include desktop_style{
+		.v3-c-content{
+			max-width: 600px;
+			text-align: center;
+		}
+	}
+	@include max_min_style(1150px){
+		background-position-x:-10px;
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true, false);
+	}
+}
+.v3-m-3{
+	@include m_section();
+	@include desktop_style{
+		@include background_set(center,contain,$bg-img:'https://tomsfinds.com/dijilele/wp-content/uploads/sites/335/2019/11/f-Path_23.svg');
+		padding-bottom: 15rem;
+		text-align: center;
+	}
+	@include tablet_style{
+		padding: 1rem;
+	}
+}
+.v3-d-4{
+	.wp-image-1171{
+		@extend %mobile-only;
+		width: 80%;
+	}
+	.wp-image-1169{
+		@extend %desktop-only;
+	}
+	@include desktop_style{
+		.two-items{
+			@include flex_set($align:center);
+			li{
+				max-width: 700px;
+			}
+			li:first-child{
+				flex-basis: 60%;
+			}
+			li:last-child{
+				flex-basis: 40%;
+			}
+		}
+		
+	}
+}
+.v3-m-5{
+	
+	@include desktop_style{
+		.big-image-inner{
+			max-width: 900px;
+			margin-bottom: -10rem;
+		}
+		text-align: center;
+		margin-bottom: -5rem;
+	}
+}
+.v3-c-7{
+	@include desktop_style{
+		@include background_set(100% center, auto 100%, $color:#000);
+		.v3-c-content{
+			padding: 0;
+			max-width: 450px;
+		}
+	}
+	@include max_min_style(1430px){
+		background-position: 10px center;
+	}
+	@include tablet_style{
+		padding-bottom: 45vw;
+		.ma{
+			display: none;
+		}
+	}
+}
+.v3-e-8{
+	.wp-image-1175{
+		@extend %mobile-only;
+	}
+	.three-across-item {
+		text-align: left;
+	}
+	.three-across-items{
+		display: flex;
+
+	}
+ @include desktop_style{
+	.three-across-items{
+		justify-content: space-between;
+		align-content: stretch;
+	}
+	.three-across-item{
+	 margin: 0;		
+	}
+ }
+	@include tablet_style{
+		margin-top: -40vw;
+		.three-across-items{
+			flex-flow: column nowrap;
+			align-content: center;
+		}
+		
+		.wp-image-1187{
+			display: none;
+		}
+	}
+}
+.v3-m-9{
+	@include m_section($text-box:1000px,$width:1200px 90%);
+	text-align: center;
+	p{
+		max-width: 700px;
+		margin: auto;
+	}
+}
+.v3-e-10{
+	.three-across-top-text{
+		max-width: 1000px;
+	}
+}
+.v3-l-11{
+	@include desktop_style{
+		margin: 5rem 0;
+		.half-bg-inner{
+			padding: 7% 1rem ;
+		}
+		.half-bg-content{
+			max-width: 560px;
+		}
+		.half-bg-img{
+			@include background_set(center, contain);
+		}
+	}
+	@include tablet_style{
+		margin: 1rem 0;
+		@include cnl_padding_remove_flip(false, true);
+	}
+}
+.v3-n{
+	.color-cta-content{
+		padding: 1rem;
+	}
+}
+.v3-n:last-child {
+	background-color: #000;
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#fff);
+	h3{
+		color:#B09F8D !important;
+	}
+	.color-cta-content{
+		padding: 2% 1rem 5% 1rem;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

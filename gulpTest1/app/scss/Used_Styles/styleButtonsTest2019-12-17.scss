@@ -1,0 +1,69 @@
+$body-color: #000;
+$nice-blue:#012026;
+
+$v3n: (
+	btn-bg:#fff,
+	btn-txt:$nice-blue,
+	btn-bg-hvr:$nice-blue,
+	btn-brdr:#fff,
+	input-plchldr:#fff,
+	input-txt:#fff,
+	input-brdr:#fff,
+	input-bg:transparent
+	);
+$modal: (
+	btn-bg:#fff,
+	btn-txt:$nice-blue,
+	btn-bg-hvr:$nice-blue,
+	btn-brdr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+.sub-hdr{
+	display:block;
+	font-size:0.5em;
+}
+
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	background-color: $nice-blue;
+ color: $body-color;
+}
+h1, h2, h3{
+@include h_resize(2rem, 1100px);
+}
+.v3-n-1 {
+	@include button_style ($v3n, $rounded_edges:true);
+	@include input_box_style ($v3n, $rounded_edges:true);
+	@include n_content (#fff);
+}
+.v3-n-2 {
+	@include button_style ($v3n, $rounded_edges:true);
+	@include input_box_style ($v3n, $rounded_edges:true, $stacked:true);
+	@include n_content (#fff,$aside:true);
+}
+.v3-n-3 {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n, $stacked:true);
+	@include n_content (#fff);
+}
+.v3-n-4 {
+	@include button_style ($v3n,$rounded-corners:true);
+	@include input_box_style ($v3n,$rounded-corners:true);
+	@include n_content (#fff);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

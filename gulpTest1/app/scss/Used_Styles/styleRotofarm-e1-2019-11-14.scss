@@ -1,0 +1,204 @@
+/*this is my base scssfile */
+$body-color: #1A1F22;
+$v3b1: (
+btn-bg:#84BE18,
+btn-txt:#fff,
+btn-brdr:#84BE18,
+btn-bg-hvr:#fff,
+input-plchldr:#385305,
+input-txt:#385305,
+input-brdr:#385305,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#84BE18,
+btn-txt:#fff,
+btn-brdr:#84BE18,
+btn-bg-hvr:transparent,
+input-plchldr:#385305,
+input-txt:#385305,
+input-brdr:#385305,
+input-bg:transparent
+);
+$modal: (
+btn-bg:#84BE18,
+btn-brdr:#84BE18,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+ font-family: 'Nunito Sans', sans-serif;
+ @include tablet_style{
+	 text-align: center;
+ }
+}
+h1, h2, h3{
+font-family: 'Nunito Sans', sans-serif;
+color: #385305;
+@include h_resize(3rem, 1200px 1100px 600px 537px 487px 450px 406px 366px);
+.h-bld{
+	font-weight: 800;
+}
+.sub-hdr{
+	margin: 1rem 0;
+	display: block;
+	font-size: 0.7em;
+}
+}
+.v3-l{
+@include cnl_padding_remove_flip(true, false);
+}
+.v3-c,.v3-l-2,.v3-l-8{
+	@include cnl_padding_remove_flip();
+}
+.v3-c{
+	.v3-c-inner{
+	 width: 100%;
+	}
+}
+.v3-b-1 {
+	background-color: #fff;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	.wp-image-1199{
+		max-width: 85%;
+		margin: 1.5rem auto 0 auto;
+	}
+	.v3-b-top-content, .v3-b-bottom-content{
+		color:$body-color;
+	}
+	@include desktop_style{
+		@include background_set(0 0, auto 100%);
+		.v3-b-inner-content{
+			padding: 2% 0;
+			max-width: 630px;
+		}
+	}
+	@include max_min_style(1420px){
+		@include background_set(-100px 0, auto 100%);
+	}
+	@include max_min_style(1288px){
+		@include background_set(-150px 0, auto 100%);
+	}
+	@include max_min_style(1230px){
+		@include background_set(-200px 0, auto 100%);
+	}
+	@include max_min_style(1201px){
+		@include background_set(-200px 0, auto 100%);
+		.v3-b-inner-content{
+			padding: 1% 0;
+			max-width: 600px;
+		}
+		
+	}
+	@include max_min_style(1100px){
+		
+		.v3-b-inner-content{
+			padding: 1% 0;
+			max-width: 555px;
+		}
+		
+	}
+	@include tablet_style{
+
+	}
+}
+.v3-l-3{
+	@include desktop_style{
+		.wp-image-1181 {
+			margin-top: 1.5rem;
+		}
+	}
+}
+.v3-l-4{
+	@include desktop_style{
+		.wp-image-1169{
+			display: none;
+		}
+		.wp-image-1171{
+			margin-top: 2.5rem;
+			max-width: 90%;
+		}
+	}
+	@include tablet_style{
+		.wp-image-1171{
+			display: none;
+		}
+	}
+}
+.v3-l-4,.v3-l-3{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 5% 1rem;
+		}
+	}
+background-color: #F2F2F2;
+}
+.v3-l-2{
+	@include desktop_style{
+
+			@include absolute_box('.wp-image-1190',auto,25%,-50% 0){
+				bottom: 0;
+				width: 50%;
+			}
+			.half-bg-inner{
+				padding: 3% 1rem 45% 1rem;
+			}
+			.half-bg-img{
+				@include background_set(center, contain);
+			}
+	}
+}
+.v3-m{
+	@include m_section();
+}
+.v3-m-5{
+	.big-image-inner{
+		text-align: center;
+	}
+}
+.v3-c-6{
+	.wp-image-1172{
+		margin: auto;
+		margin-top: 1.5rem;
+		width: 80%;
+	}
+	@include desktop_style{
+		.v3-c-content{
+			padding: 40% 0 5% 0;
+		}
+	}
+	
+}
+.v3-l-8{
+	@include desktop_style{
+		.half-bg-inner {
+			padding: 5% 0 25% 0;
+			@include background_set(0 100%, 100% auto, $bg-img:'https://tomsfinds.com/rotofarm/wp-content/uploads/sites/337/2019/11/section8-w.jpg');
+		}
+	}
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#385305);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

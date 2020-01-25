@@ -1,0 +1,278 @@
+/*Variables*/
+$body-color: #444444;
+$light-blue:#26B1DE;
+$dark-blue:#070A33;
+/*Button objects*/
+$v3b1: (
+btn-bg:$light-blue,
+btn-txt:$dark-blue,
+btn-bg-hvr:#fff,
+btn-brdr:$light-blue,
+input-plchldr:$dark-blue,
+input-txt:$dark-blue,
+input-brdr:$dark-blue,
+input-bg:transparent
+);
+$v3n: (
+	btn-bg:$light-blue,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$light-blue,
+	input-plchldr:#fff,
+	input-txt:#fff,
+	input-brdr:#fff,
+	input-bg:transparent
+	);
+	$v3n2: (
+		btn-bg:$light-blue,
+		btn-txt:#fff,
+		btn-bg-hvr:#fff,
+		btn-brdr:$light-blue,
+		input-plchldr:$dark-blue,
+		input-txt:$dark-blue,
+		input-brdr:$dark-blue,
+		input-bg:transparent
+		);
+$modal: (
+	btn-bg:$light-blue,
+	btn-txt:$dark-blue,
+	btn-bg-hvr:#fff,
+	btn-brdr:$light-blue
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	font-family:"proxima-nova", sans-serif;
+	color: $body-color;
+}
+.v3-wrap{
+	input {
+		font-weight: 700 !important;
+		&:placeholder-shown{
+			font-weight: 700 !important;
+		}
+		&::placeholder{
+			font-weight: 700 !important;
+		}
+	}
+	h1, h2, h3{
+		font-family:"proxima-nova", sans-serif;	
+	}
+	h1, h2{
+		@include h_resize(3rem, 1192px 1100px 520px 485px 447px 411px 376px 340px);
+	}
+	h3{
+		@include h_resize(2rem, 1100px);
+	}
+	h1{
+		font-weight: 400;
+		@include desktop_style{
+			width: 170%;
+		}
+	}
+	h2,h3{
+		font-weight: 700;
+	}
+	.sub-hdr{
+	display:block;
+	font-size:0.5em;
+	}
+	.blue-text{
+		color: $dark-blue;
+	}
+	.light-blue-text{
+		color:$light-blue;
+		font-weight: 700;
+	}
+	.bigger-p{
+		font-size: 1.3rem;
+	}
+	@include tablet_style{
+		@include absolute_box('h1',3%,50%){
+			width: 100%;
+			max-width: 520px;
+			padding: 1rem;
+		};
+	}
+	@include max_style(500px){
+		@include absolute_box('h1',2%,50%){
+			width: 100%;
+			padding: 1rem;
+		};
+	}
+}
+.v3-t-wrap{
+	@include desktop_style{
+		.half-bg-img-t{
+			@include background_set(center,contain);
+		}
+		.v3-l{
+			max-width: 1300px;
+			margin: auto;
+		}
+		.normal-page{
+			max-width: 400px;
+		}
+	}
+}
+.v3-b-1 {
+	@include button_style ($v3b1,$rounded_edges:true);
+	@include input_box_style ($v3b1,$rounded_edges:true,$stacked:true);
+	.v3-b-top-content,
+	.v3-b-bottom-content {
+		color:$body-color;
+	}
+	@include desktop_style{
+		.v3-b-wrap{
+			padding: 0 2rem;
+		}
+		.v3-b-top-content{
+			@include absolute_box('.hero-logo',-25%,1, 0 -50%);
+		}
+		
+		@include background_set(100% 0,auto 100%,$color:#d5d5d5);
+		border-radius: 35px;
+		margin: 2rem;
+	}
+	@include max_min_style(1295px){
+		@include background_set(-50px center, auto 100%);
+	}
+	@include max_min_style(1230px){
+		@include background_set(-80px center, auto 100%);
+	}
+	@include max_min_style(1192px){
+		@include background_set(-90px center, auto 100%);
+	}
+	@include tablet_style{
+		background-color: #f1f1f1;
+	}
+}
+.v3-c-2{
+	.mounth{
+		@extend %desktop-only;
+	}
+	@include desktop_style{
+		.v3-c-content {
+			padding: 7% 0;
+			max-width: 700px;
+			text-align: center;
+			.mounth{
+				width: 100%;
+				margin-right: -5rem;
+				margin-left: 1.5rem;
+			}
+			p{
+				width: 90%;
+				max-width: 500px;
+				margin: auto;
+			}
+			.normal-page{
+				max-width: 700px;
+				width: max-content;
+			}
+		}
+	}
+	@include tablet_style{
+		h2{
+			text-align: center;
+		}
+		@include cnl_padding_remove_flip(true,false);
+		background-color: #27E0FF;
+	}
+}
+.v3-m-3{
+	@include m_section();
+}
+.v3-m-4{
+	text-align: center;
+	@include m_section($padding_off:false,$width:700px 90% auto);
+	@include background_set(100% 100%, 100% auto, $bg-img:'https://tomsfinds.com/brushee/wp-content/uploads/sites/352/2020/01/Group_8548.svg');
+	.ma{
+		background-color:#fff;
+		padding: 0 1.7rem;
+		margin-bottom: 1rem;
+	}
+	@include desktop_style{
+		margin-bottom: 7%;
+		@include background_set(100% 100%, 100% auto, $bg-img:'https://tomsfinds.com/brushee/wp-content/uploads/sites/352/2020/01/Group_126.svg');
+	}
+	@include tablet_style{
+		margin-bottom: 1rem;
+	}
+}
+.v3-t-8-wrap{
+	@include t_section();
+	@include desktop_style{
+		margin: 3% 0 0 0;
+		@include background_set(0 0, cover, $bg-img:'https://tomsfinds.com/brushee/wp-content/uploads/sites/352/2020/01/JYN-03214.jpg');
+		.half-bg-inner-t{
+			padding: 20% 0 10% 0;
+		}
+		background-color: #f9f9f9;
+		.stars{
+			margin: 1rem 2rem 0 auto;
+		}
+	}
+	@include tablet_style{
+		.stars{
+			margin: 1rem auto;
+			max-width: 70px;
+		}
+	}
+}
+.v3-n {
+	@include button_style ($v3n,$rounded_edges:true);
+	@include input_box_style ($v3n,$rounded_edges:true,$stacked:true);
+	@include n_content (#444);
+	background-color:#BBB9BA;
+	@include tablet_style{
+		@include button_style ($v3n2);
+		@include input_box_style ($v3n2);
+	}
+	h3{
+		color:#fff !important;
+	}
+}
+
+.v3-n-9{
+	@include desktop_style{
+		border-radius: 35px;
+		margin: 2rem;
+		.color-cta-content{
+			padding: 15% 0;
+		}
+		.color-cta-inner{
+			padding: 0 2rem;
+		}
+	}
+
+}
+.v3-q-10{
+	@include tablet_style{
+		@include background_set(100% 100%,contain, $bg-img:'https://tomsfinds.com/brushee/wp-content/uploads/sites/352/2020/01/Group-7-1.jpg',$color: #bbb9ba);
+		.v3-q-inner{
+			max-width: 150px;
+			padding: 15% 0 45% 0;
+			margin: 0 0 0 1rem;
+		}
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

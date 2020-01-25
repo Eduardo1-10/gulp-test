@@ -1,0 +1,255 @@
+$body-color: #000;
+$background-color:#011E31;
+$v3b1: (
+btn-bg:#FC8B27,
+btn-txt:#000,
+btn-bg-hvr:#fff,
+btn-brdr:#FC8B27,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:#FC8B27,
+input-bg:transparent
+);
+$v3n: (
+	btn-bg:#FC8B27,
+	btn-txt:#000,
+	btn-bg-hvr:#fff,
+	btn-brdr:#FC8B27,
+	input-plchldr:#fff,
+	input-txt:#fff,
+	input-brdr:#FC8B27,
+	input-bg:transparent
+);
+$modal: (
+btn-bg:#FC8B27,
+btn-txt:#000,
+btn-bg-hvr:#fff,
+btn-brdr:#FC8B27,
+);
+@import '_partial1'; /*brings the mixings in*/
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.mobile-only{
+@extend %mobile-only;
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Nunito', sans-serif;
+ 	color: $body-color;
+}
+h1, h2, h3{
+	font-family: 'Nunito', sans-serif;
+}
+h1, h2{
+	@include h_resize(2.9rem, 1100px 868px 500px 377px 345px);
+}
+h2{
+	color: #097286;
+	@include desktop_style{
+		text-align: center;
+	}
+	@include tablet_style{
+		text-align: left;
+	}
+}
+h3{
+	@include h_resize(1.7rem, 868px 377px );
+}
+.v3-b-1 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include desktop_style{
+		.v3-b-inner-content{
+			padding: 5% 0;
+		}
+		@include background_set(0 0, auto 100%,$color:$background-color);
+	}
+	@include max_min_style(1295px){
+		background-position: -100px 0;
+	}
+	@include max_min_style(1170px){
+		background-position: -190px 0;
+	}
+	@include max_min_style(1050px){
+		background-position: -220px 0;
+	}
+	@include tablet_style{
+		background-color: $background-color;
+		.v3-b-top-content{
+			text-align: left;
+		}
+	}
+}
+.v3-c{
+	@include desktop_style{
+		background-size: auto 100%;
+		&:not(.v3-c-5){
+			.v3-c-content{
+				max-width: 420px;
+			}
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true, false);
+	}
+}
+.v3-m{
+	@include m_section;
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center 100%,contain);
+		}
+	}
+	@include tablet_style{
+		&:not(.v3-l-3){
+		@include cnl_padding_remove_flip();}
+	}
+}
+.v3-c-2{
+	@include desktop_style{
+		@include background_set(100% center, auto 100%,$color:#fcfcfc);
+	}
+	@include max_min_style(1700px){
+		@include background_set(100% center,  85% auto);
+	}
+	@include max_min_style(1070px){
+		background-position-x: 200px;
+	}
+}
+.v3-l-3{
+	@extend %mobile-only;
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true, false);
+	}
+}
+.v3-c-2,.v3-c-4{
+	@include desktop_style{
+		.v3-c-content{
+			padding: 7% 0;
+		}
+	}
+}
+.v3-c-4{
+	@include desktop_style{
+		
+		@include background_set(0 center, auto 100%,$color:#fcfcfc);
+	}
+	@include max_min_style(1700px){
+		@include background_set(0 center,  60% auto);
+	}
+	@include max_min_style(1070px){
+		background-position-x: -15px;
+	}
+}
+.v3-c-5{
+	@include desktop_style{
+		@include background_set(100% center, auto 100%,$color:#101010);
+	}
+	@include max_min_style(1700px){
+		@include background_set(100% 100%, 85% auto,$color:#101010);
+	}
+	@include tablet_style{
+		background-color: #101010;
+		@include cnl_padding_remove_flip(true, true);
+		.ma {
+			margin:-0.2rem 0;
+		}
+	}
+}
+.v3-c-5,.v3-l-7{
+	h2,p{
+		color:#fff
+	}
+}
+.v3-c-6{
+	@extend %desktop-only;
+	@include desktop_style{
+		@include background_set(0 center, auto 100%);
+		.v3-c-content{
+			padding: 12% 0;
+		}
+		.wp-image-1189 {
+			width: 85%;
+			position: relative;
+			top:3rem;
+		}
+	}
+	@include max_min_style(1300px){
+		 background-position-x:-100px;
+	}
+	@include max_min_style(1190px){
+		background-position-x:-200px;
+   }
+   @include max_min_style(1045px){
+	background-position-x:-250px;
+}
+}
+.v3-l-7{
+	background-color: #101010;
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 7% 0;
+		}
+		.half-bg-img{
+			height: 120%;
+			width: 60%;
+			bottom: 0;
+			left: 45%;
+			top:auto;
+		}
+		.half-bg-content {
+			max-width: 400px;
+			margin: auto;
+		}
+	}
+}
+.v3-l-9{
+	@include desktop_style{
+		margin: 2% 0 -5% 0;
+		.half-bg-img{
+			width: 40%;
+			left: 25%;
+			transform: translateX(-50%);
+		}
+		.half-bg-inner{
+			@include background_set(0 0, auto 100%, $bg-img:'https://tomsfinds.com/baselamp/wp-content/uploads/sites/341/2019/11/Group_56.jpg');
+			width: 53%;
+			padding: 8% 1.5rem;
+		}
+	}
+}
+.v3-n:last-child {
+	background: rgb(1,22,35);
+background: linear-gradient(11deg, rgba(1,22,35,1) 0%, rgba(3,54,87,1) 100%);
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#fff){
+		padding-top: 5rem;
+	};
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

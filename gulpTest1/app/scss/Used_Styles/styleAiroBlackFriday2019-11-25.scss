@@ -1,0 +1,201 @@
+$body-color: #000;
+$body-background-color:#F9F9FE;
+$golden-color:#9E794D;
+$modal: (
+btn-bg:$golden-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$golden-color,
+);
+@import '_partial1'; /*brings the mixings in*/
+.sub-hdr{
+	display:block;
+	font-size:0.5em;
+}
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.desktop-only{
+	@extend %desktop-only;
+}
+.mobile-only{
+	@extend %mobile-only;
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+ 	color: $body-color;
+ 	background-color:$body-background-color;
+	text-align: center;
+}
+.v3-wrap{
+	@include desktop_style{
+		@include background_set(center 0, 100% auto,$bg-img:'https://vip.airocollective.com/wp-content/uploads/2019/11/Group-1041.jpg');
+	}
+	@include tablet_style{
+		
+		@include background_set(center 0, 100% auto,$bg-img:'https://vip.airocollective.com/wp-content/uploads/2019/11/Group_1049.jpg');
+	}
+	h1{
+		@include h_resize(3.4rem, 1200px 1100px 868px 500px 441px 410px 380px 349px);
+	}
+	h3{
+		text-transform: uppercase;
+		letter-spacing: 0.08rem;
+	}
+	h2,h3{
+		@include h_resize(1.5rem, 918px 500px);
+	}
+	h1, h2, h3{
+		font-family: 'Roboto', sans-serif;
+		color:#000;
+	}
+	h1,h3,h2{
+		font-weight: 900;
+	}
+	.golden-text{
+		color: $golden-color;
+	}
+	.Ships-b{
+		text-transform: uppercase;
+		width: fit-content;
+		max-width: 100%;
+		margin: auto;
+		padding-left: 2rem;
+		@include blt_pnt_style(50%,-2rem){
+			@include background_set(center,contain,$repeat:no-repeat,$bg-img:'https://vip.shiftcam.com/wp-content/uploads/2019/11/f-truck.svg');
+			width:55px;
+			height: 55px;
+			transform: translatey(-50%);
+		};
+	}
+	.ribbon-b{
+		@include background_set(center,contain,$repeat:no-repeat,$bg-img:'https://vip.airocollective.com/wp-content/uploads/2019/11/f-ribbon.svg');
+		position: absolute;
+		top:0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 290px;
+		max-width: 80%;
+		padding: 1rem;
+		font-weight: 900;
+		.big-txt{
+			line-height: 1.3;
+			font-size: 1.8rem;
+			@include tablet_style{
+				font-size: 1.6rem;
+			}
+			@include max_style(400px){
+				font-size: 1.3rem;
+			}
+		}
+	}
+	.button_style{
+		border-radius: 40px;
+		background-color:$golden-color;
+		border-color: $golden-color;
+	}
+	.offer-price{
+		font-weight: 900;
+		.retail{
+			font-weight: 300;
+			font-size: 0.5em;
+			line-height: 1;
+			text-decoration: line-through;
+		}
+		@include desktop_style{
+			font-size: 2.4rem;
+			
+		}
+		@include tablet_style{
+			font-size: 2rem;
+		}
+	}
+}
+.v3-q{
+	text-align: center;
+	hr{
+		color: $body-background-color;
+		background-color: $body-background-color;
+		height: 1px;
+		margin-bottom: 1rem;
+		visibility: hidden;
+	}
+	@include tablet_style{
+		padding-bottom: 0.5rem;
+	}
+}
+.v3-d{
+	@include desktop_style{
+		.two-items{
+			display: flex;
+			align-items: stretch;
+			justify-content: space-around;
+		}
+		.two-item{
+			flex-basis: 35%;
+			padding: 1rem;
+			margin: 1rem;
+			img{
+				max-height: 300px;
+			}
+		}
+		.offer-text{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: space-between;
+		height: 50%;
+		}
+		.offer-img-wrap{
+			min-height: 50%;
+			width: 100%;
+		}
+	}
+	.two-item{
+		border: 5px solid $golden-color;
+		margin-top: 5rem;
+		padding-top: 3rem;
+		position: relative;
+		img{
+			margin: auto;
+		}
+		padding-bottom: 3rem;
+		@include absolute_box('.wp-image-1511',auto,50%,-50% 50%){
+			bottom: 0;
+		};
+	}
+	@include tablet_style{
+		padding: 0 1rem 1rem 1rem;
+		.two-item{
+			padding-left: 0rem;
+			padding-right: 0rem;
+		}
+	}	
+}
+.v3-m-3{
+	margin: 2.3rem auto;
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

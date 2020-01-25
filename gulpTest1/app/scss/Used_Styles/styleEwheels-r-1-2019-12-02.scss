@@ -1,0 +1,274 @@
+$body-color: #000;
+$v3b1: (
+btn-bg:#5DBC46,
+btn-txt:#000,
+btn-bg-hvr:#fff,
+btn-brdr:#5DBC46,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:#fff,
+input-bg:transparent
+);
+$v3n: (
+	btn-bg:#5DBC46,
+	btn-txt:#000,
+	btn-bg-hvr:#fff,
+	btn-brdr:#5DBC46,
+	input-plchldr:#000,
+	input-txt:#000,
+	input-brdr:#000,
+	input-bg:transparent
+);
+$modal: (
+btn-bg:#000000,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+);
+@import '_partial1'; /*brings the mixings in*/
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.75;
+ color: $body-color;
+}
+.black-rectangle{
+	height: 6px;
+	width: 40px;
+	background-color: #000;
+	margin: 2rem 0;
+	@include tablet_style{
+		height: 4px;
+		margin: 0.3rem 0;
+	}
+}
+.sub-hdr{
+	max-width: 450px;
+	margin-bottom: 1rem;
+	@include h_resize(1.5rem, 600px 400px);
+}
+.wp-image-1166, .wp-image-1167{
+ margin-top:1.2rem
+}
+.v3-wrap{
+	@include tablet_style{
+		@include absolute_box('.top-txt-mobile', 0, 50%,-50% 0){
+			width: 90%;
+		};
+	}
+	h1, h2, h3{
+		font-family: 'Montserrat', sans-serif;
+		@include h_resize(3.2rem, 1100px 1030px 1000px 868px 600px 470px 440px 390px);
+	}
+	h2, h3{
+		font-weight:300;
+	}
+	h4{
+		text-transform: uppercase;
+		color: #5DBC46;
+		font-weight: 700;
+	}
+}
+
+.v3-c-1 {
+@include desktop_style{
+	.v3-c-content{
+		padding: 0 0 16% 0;
+	}
+}
+@include max_min_style(1164px){
+	background-position-x: 100%;
+}
+@include tablet_style{
+	@include cnl_padding_remove_flip(true,false);
+	.txt-width {
+		color: #fff;
+	}
+	.v3-c-inner{
+		@include background_set(0 0, 100% auto,$bg-img:'https://tomsfinds.com/ewheels/wp-content/uploads/sites/339/2019/12/Grass-bg_mobile-1.svg',$repeat:repeat-y,$color:#10180b);
+	}
+	
+}
+}
+.v3-n-2{
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	input::placeholder{
+		text-transform: uppercase;
+		font-size: 0.85em;
+		text-align: center;
+		opacity: 1;
+	}
+	h4{
+		color: #5DBC46 !important;
+	}
+	@include background_set(0 0, 100% auto,$bg-img:'',$repeat:repeat-y,$color:#10180b);
+	@include desktop_style{
+		padding: 0 1rem;
+		.color-cta-content {
+			padding: 0;
+		}
+		
+		.txt-width{
+			max-width: 550px;
+			margin: 1rem auto;
+		}
+		.color-cta-content {
+			max-width: 550px;
+		}
+	}
+}
+.v3-l{
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-m-3{
+	@extend %mobile-only;
+}
+.v3-l-4{
+	@include desktop_style{
+		@include background_set(0 0,100% auto,$bg-img:'https://tomsfinds.com/ewheels/wp-content/uploads/sites/339/2019/12/Grass-bg.svg',$repeat:repeat-y,$color:#10180b);
+		.half-bg-inner{
+			color:#fff;
+			padding: 5% 1rem;
+		}
+		.half-bg-img{
+			@include background_set(center,contain)
+		}
+	}
+}
+.v3-m-5{
+	@include m_section();
+	@extend %desktop-only;
+}
+.v3-l-6{
+	ul{
+		display: flex;
+		list-style-type: none;
+		li{
+			@include blt_pnt_style(50%,-1.5rem){
+				font-size: 2.5rem;
+				font-weight: 700;
+				transform: translate(-50%,-50%);
+			};
+			&:first-child::before{
+				content: '1';
+			}
+			&:nth-child(2)::before{
+				content: '2';
+			}
+			&:last-child::before{
+				content: '3';
+			}
+		}
+	}
+	.wp-image-1174{
+		@extend %desktop-only;
+	}
+@include desktop_style{
+	.half-bg-inner{
+		padding: 7% 2rem;
+		
+	}
+	.half-bg-content{
+		max-width: 600px;
+	}
+	ul{
+		margin: 1rem 0;
+		padding-left: 2rem;
+		width: 45%;
+		min-width: 350px;
+		flex-direction: column;
+		font-size: 0.9em;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	li{
+		margin: 1rem 0;
+	}
+}
+@include tablet_style{
+
+	ul{
+		flex-direction: column;
+		padding-left: 2.5rem;
+		li{
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+}
+.v3-l-8 {
+ @include desktop_style{
+	 .half-bg-inner{
+		 padding: 3% 0;
+	 }
+	 .half-bg-img{
+		 background-size: contain;
+	 }
+ }
+}
+.v3-m{
+	@include m_section();
+	@include desktop_style{
+		text-align: center;
+	}
+}
+.v3-m-11{
+	.big-image{
+		max-width: 1150px;
+	}
+	@include desktop_style{
+		padding-bottom: 10rem;
+		margin-bottom: -7rem;
+	}
+	@include tablet_style{
+		padding-bottom: 2rem;
+		.ma{
+			width: 87%;
+		}
+	}
+}
+.v3-m-12{
+.big-image{
+	max-width: 1250px;
+}
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content ($color:#121212,$full-width:60% auto);
+	input::placeholder{
+		text-transform: uppercase;
+		font-size: 0.85em;
+		text-align: center;
+		opacity: 1;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

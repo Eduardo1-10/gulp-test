@@ -1,0 +1,200 @@
+/*this is my base scssfile */
+$body-color: #444444;
+$modal: (
+btn-bg:#CFB166,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+ font-family: 'Roboto', sans-serif;
+
+}
+h1, h2, h3{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	@include h_resize(2.5rem, 1220px 1156px 868px);
+}
+.reserve-btn {
+	margin: 1rem 0;
+	background-color: #CFB166 ;
+border-color:#CFB166;
+&:hover{
+	background-color: transparent;
+	border-color:#CFB166;
+	color: #CFB166 ;
+}
+@include tablet_style{
+	margin: 1rem auto;
+}
+}
+.price{
+	font-weight: 700;
+	font-size: 1.9rem;
+	color:#444444;
+	.price-msrp{
+		color:#BCBCBC;
+		text-decoration: line-through;
+		margin: 0.2rem;
+	}
+	
+}
+.v3-q-1{
+	padding: 1rem;
+	p, img{
+		margin: 0 auto;
+	}
+}
+.v3-l-2 {
+	background-color: #F8F8F8;
+	@include desktop_style{
+		width: 90%;
+		max-width: 1300px;
+		margin: 3rem auto;
+		.wp-image-1295{
+			display: none;
+		}
+		.half-bg-img{
+			@include background_set(0 center,contain);
+		}
+		.half-bg-inner{
+			padding: 3% 2rem;
+		}
+	}
+	@include tablet_style{
+		.wp-image-1294{
+			display: none;
+		}
+		.wp-image-1295{
+			margin: 1.5rem auto;
+		}
+		@include cnl_padding_remove_flip(true,false);
+	}
+}
+.v3-q-3{
+	@include desktop_style {
+		.mw-710{
+		display: flex;
+		align-items: center;
+		max-width: 1200px;
+	}
+		.wp-image-1296{
+			flex-basis: 60%;
+		}
+		h2{
+			flex-basis: 35%;
+		}
+		.wp-image-1297{
+			display: none;
+		}
+	}
+	@include max_min_style(1100px){
+		.wp-image-1296{
+			flex-basis: 55%;
+		}
+		h2{
+			flex-basis: 43%;
+		}
+	}
+	@include tablet_style{
+		text-align: center;
+		.wp-image-1296{
+			display: none;
+		}
+		.wp-image-1297{
+		 margin: auto;
+		}
+	}
+}
+.v3-q-4{
+	.mw-710{
+		@include desktop_style{
+			text-align: center;
+		}
+	}
+}
+.v3-l-5, .v3-l-6{
+	.half-bg-inner {
+		color:#fff;
+		text-align: center;
+		img{
+			margin: 1rem auto;
+		}
+		@include background_set(center, cover,$bg-img:'https://tomsfinds.com/shiftcam/wp-content/uploads/sites/320/2019/11/Group_113.svg')
+	}
+	@include tablet_style{
+		 padding: 0;
+			width: 90%;
+			max-width: 500px;
+			margin: auto;
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-m-7{
+	padding: 0 !important;
+	.big-image-inner{
+		padding: 1rem;
+		text-align: center;
+	}
+}
+.v3-e-8{
+	background-color: #F4F4F4;
+	.three-across-item{
+		background-color: #fff;
+		padding: 1rem;
+		margin: 1rem;
+
+		img{
+			margin: auto;
+		}
+	}
+	@include tablet_style{
+		.three-across-item{
+			margin: 1rem auto;
+			width: 90%;
+			max-width: 500px;
+		}
+	}
+}
+.v3-l-9{
+	background-color: #272727;
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 0.5% 2rem;
+		}
+		.half-bg-img{
+			@include background_set( 0 center, contain)
+		}
+		.wp-image-1304{
+			display: none;
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true,false);
+		.wp-image-1303{
+			display: none;
+		}
+		.half-bg-inner{
+			width: max-content;
+			margin: auto;
+		}
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

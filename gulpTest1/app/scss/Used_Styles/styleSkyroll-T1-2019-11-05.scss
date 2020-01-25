@@ -1,0 +1,375 @@
+/*this is my base scssfile */
+$color-1:#967C41;
+$v3b1-colors: (
+btn-bg:$color-1,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:#000,
+input-txt:#000,
+input-bg:transparent
+);
+$v3n-colors: (
+btn-bg:$color-1,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:#000000,
+input-txt:#000000,
+input-bg:transparent
+);
+$modal-colors: (
+btn-bg:$color-1,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@mixin tablet_style {
+	@media screen and (max-width:868px) { @content }
+}
+@mixin desktop_style {
+	@media screen and (min-width:868px) { @content }
+}
+@mixin max_style($max-style) { 
+	@media screen and (max-width:$max-style) { @content } 
+}
+@mixin max_min_style($mx-width) { 
+	@media screen and (max-width:$mx-width) and (min-width:868px) { @content } 
+}
+@function mycolor ($block-name,$mycolor) {
+	@if $block-name==v3b1{
+		@return map-get($v3b1-colors, $mycolor);
+	}
+	@else if $block-name==v3n{
+		@return map-get($v3n-colors, $mycolor);
+	}
+	@else if $block-name==modal{
+		@return map-get($modal-colors, $mycolor);
+	}
+}
+@mixin button_style ($block-name,$rounded-edges:false) {
+	#gform_submit_button_5 {
+		background-color: mycolor($block-name, "btn-bg");
+		border-color: mycolor($block-name, "btn-bg");
+		color: mycolor($block-name, "btn-txt");
+		font-weight: 500 !important;
+	}
+	#gform_submit_button_5:hover {
+		background-color: mycolor($block-name, "btn-bg-hvr");
+		border-color: mycolor($block-name, "btn-bg");
+		color: mycolor($block-name, "btn-bg");
+	}
+	@if $rounded-edges {
+		#gform_submit_button_5{
+		  border-radius:40px;
+		}
+	}
+}
+@mixin input_box_style ($block-name,$rounded-edges:false) {
+	input::placeholder {
+		color: mycolor($block-name, "input-plchldr") !important;
+		opacity: 0.9 !important;
+	}
+	input:placeholder-shown {
+		color: mycolor($block-name, "input-plchldr") !important;
+		opacity: 0.9 !important;
+	}
+	#input_5_1 {
+		background-color: mycolor($block-name, "input-bg") !important;
+		border-color: mycolor($block-name, "input-txt") !important;
+		color: mycolor($block-name, "input-txt") !important;
+		@include tablet_style{
+			text-align:center;
+		}
+	}
+	@if $rounded-edges {
+		@include desktop_style{
+			#input_5_1{
+				border:none !important;
+			}
+			.lmlp-cta-wrap{
+				padding:0;
+				border:2px solid mycolor($block-name, "input-txt");
+				border-radius:50px;
+				margin:0;
+			}
+		}
+		#input_5_1{
+			border-radius:40px;
+		}
+	}
+}
+@function borderRadius($color){
+	$radius:50%;
+	@if $color!= 'none' {
+		$radius:50%;			
+	}@else {
+		$radius:0;
+	}
+	@return $radius;
+}
+@function before_after($objct){
+	@if $objct == after {
+		$objct: '::after';
+			}@else if $objct == before{
+				$objct: '::before';
+	} 
+	@return $objct
+}
+@mixin blt_pnt_style($color,$top,$left,$position:absolute,$objct:before){
+	position:relative;
+	&#{before_after($objct)}{
+				content:"";
+				display:block;
+		    position:$position;
+		    left:$left;
+				top:$top;
+				background-color:$color;
+		    border-radius:borderRadius($color);
+		@content
+	}
+}
+@mixin cnl_padding_remove_flip($remove_padding:true,$flip:true){
+@include tablet_style {
+	@if $remove_padding {
+	padding:0 !important;
+	.ma {
+			padding:0 !important;
+	}
+	.v3-c-inner{
+		padding:1rem !important;
+	}
+	}
+	@if $flip {
+		display:flex;
+		flex-direction:column-reverse;
+	}
+	@content
+	}
+}
+@mixin h_resize($font-size,$size-map) {
+	font-size: $font-size !important;
+	$rest:0.2rem;
+	@each $width in $size-map{
+		@include max_style($width){
+			font-size: #{$font-size - $rest}  !important;
+			$rest: $rest + 0.2rem;
+		}
+	}
+}
+@mixin background_set($positon,$size,$repeat:no-repeat,$bg-img:false,$color:#fff){
+	background-position:$positon !important;
+	background-size:$size !important;
+	@if $bg-img {
+	background-image:url($bg-img) !important;
+	background-repeat:$repeat !important;
+	}
+	background-color:$bg-img !important;
+
+}
+@mixin absolute_box($object_name,$top,$left,$center:-50% -50%){
+	position:relative;
+		#{$object_name} {
+			position:absolute;
+			top:$top;
+			left:$left;
+			@if $center{
+				transform:translate(nth($center,1),nth($center,2));
+			}
+			@content
+		}
+}
+@mixin m_section($text-box:700px, $padding_off:true, $width:false) {
+	@if $width {
+		.big-image{
+			max-width: nth($width, 1 );
+			width: nth($width, 2 );
+		}
+	}
+
+	@if $padding_off {
+		padding: 0;
+	}
+		.big-image-inner{
+			@if $text-box{
+				max-width: $text-box;
+			}
+			@if $padding_off {
+				padding: 1rem;
+			}
+		}
+}
+.page-wrap{
+	max-width:1920px;
+	margin:auto;
+	overflow:hidden;
+}
+.v3-wrap{
+	@include tablet_style{
+		@include absolute_box('.v3-b-1 h1',3.5%,69.5%){
+			width:58%;
+			text-align:left;
+		};
+	}
+}
+body{
+	line-height: 1.8;
+}
+h1,h2{
+	font-family: 'Montserrat', sans-serif !important;
+}
+h1{
+	@include h_resize(3.5rem,1100px 1000px 868px 800px 742px 691px 599px);
+	@include max_style(530px){
+		font-size:6.4vw !important;
+	}
+		.h1-subhdr{
+			font-size:0.6em;
+			display:block;
+			font-weight:300;
+			font-style:italic;
+	}
+	
+}
+h2{
+	@include h_resize(3.3rem,1100px 1000px 583px 472px 415px 384px 355px);
+}
+h3{
+	@include h_resize(2.7rem,1100px 1000px 583px 472px 443px 410px 377px 346px);
+	
+}
+.v3-l{
+		@include cnl_padding_remove_flip();
+	
+	}
+.v3-b-1 {
+	@include button_style (v3b1);
+	@include input_box_style (v3b1);
+}
+.v3-n-2{
+	@include input_box_style (v3b1);
+	background-color:$color-1;
+		#gform_submit_button_5 {
+		background-color: #000;
+		border-color: #000;
+		color: #fff;
+	}
+	.normal-page{
+		*{color:#000 !important;}
+	}
+
+}
+.v3-m{
+	@include  m_section();
+}
+.v3-n:last-child {
+	@include button_style (v3n);
+	@include input_box_style (v3n);
+	@include desktop_style {
+		font-weight: 600 !important;
+		.color-cta-content {
+			width:50%;
+			max-width:600px;
+		}
+		.lmlp-cta-wrap {
+			max-width: 600px;
+			margin: auto;
+		}
+		.color-cta-inner{
+			padding: 2rem 0;
+			@include absolute_box('.color-cta-content h3',40%,75%,$center:-50% -50%){
+				width:45%;
+				max-width:550px;
+			};
+		}
+	}
+	h3,p,strong,b{
+		color:#0F0F0F !important;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style (modal);
+}
+.v3-e-8{
+	.three-across-items{
+		padding: 1rem;
+	}
+	.three-across-item{
+		padding: 1rem;
+		background-color: #F8F8F8;
+		-webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.25);
+box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.25);
+border-radius: 20px;
+	}
+	img{
+		width: 50%;
+		margin: 1rem auto;
+	}
+}
+.name{
+	font-weight: 800;
+}
+@include desktop_style{
+	.v3-l{
+		margin:3rem 0;
+		.half-bg-img{
+			@include background_set(center,contain);
+}
+	}
+	.v3-b-1{
+		.wp-image-1150{
+			display:none;
+		}
+	}
+	.v3-n-2 {
+		display:none;
+	}
+	.v3-m{
+		text-align: center;
+	}
+	.v3-e-8{
+		.three-across-item{margin: 3rem 1rem}
+	}
+}
+@include tablet_style{
+	.v3-b-1{
+		.lmlp-cta-wrap{
+			display:none;
+		}
+		.v3-b-bottom-content{
+			display:none !important;
+		}
+		.v3-b-top-content{
+			text-align: left;
+		}
+	}
+	.v3-n-2{
+		.normal-page{
+			text-align: left;
+		}
+	}
+	.v3-e-8{
+		.three-across-items{
+			width: max-content;
+			max-width: 100%;
+			margin: auto;
+		}
+		.three-across-item{margin: 1rem 0;}
+	}
+}
+@include max_style(500px){
+	.wp-image-1150{
+	  max-width:100vw !important;
+		width:100vw;
+		margin:-1rem !important;
+	}
+}

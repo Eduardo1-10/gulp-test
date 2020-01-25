@@ -1,0 +1,240 @@
+$body-color: #fff;
+$v3b1: (
+btn-bg:#8D4434,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#8D4434,
+input-plchldr:#FFFFFF,
+input-txt:#FFFFFF,
+input-brdr:#FFFFFF,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:	#8D4434,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+btn-brdr:#8D4434,
+input-plchldr:#FFFFFF,
+input-txt:#FFFFFF,
+input-brdr:#FFFFFF,
+input-bg:transparent
+);
+$modal: (
+btn-bg:#8D4434,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#8D4434,
+);
+@import '_partial1'; /*brings the mixings in*/
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+%img-full-width{
+	@include max_style(500px){
+		margin: 1.5rem -1rem;
+		width: 100vw;
+		max-width: 100vw;
+	}
+}
+.page-wrap{
+
+	overflow:hidden;
+	@include desktop_style{
+		background-color: #090909;
+		@include background_set(center 100%, 100% auto, $bg-img:'https://tomsfinds.com/moar-bikes/wp-content/uploads/sites/338/2019/11/bg.jpg');
+	}
+}
+.v3-wrap{
+	@include tablet_style{
+	@include absolute_box('h1',1rem, 50%, -50% 0){
+		width: 90%;
+	};
+}
+}
+body {
+ color: $body-color;
+ line-height: 1.7;
+ .sml-text{
+	 .normal-page{
+		max-width: 400px;
+	 }
+ }
+	@include tablet_style{
+		background-color: #090909;
+		@include background_set(center 100%, auto 25%, $bg-img:'https://tomsfinds.com/moar-bikes/wp-content/uploads/sites/338/2019/11/bg.jpg');
+	}
+
+}
+h1, h2, h3{
+	font-family: bebas-neue-by-fontfabric, sans-serif;
+	font-weight: 700 !important;
+	@include h_resize(3.7rem, 1205px 1100px 1050px 490px 444px 401px 373px 347px );
+}
+h1{
+	.sub-hdr{
+		display: block;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.4em;
+		font-weight: 400 !important;
+	}
+	@include desktop_style{
+		width: 130%;
+	}
+	@include max_min_style(1205px){
+		width: 570px;
+	}
+}
+style + .ma {
+	@include tablet_style{
+		padding-top: 15rem;
+	}
+	@include max_style(600px){
+		padding-top: 47vw;
+	}
+}
+.v3-m{
+	@include m_section();
+	
+	@include desktop_style{
+		.big-image-inner{
+			text-align: center;
+		}
+	}
+}
+.v3-b-1 {
+	background-color: #090909;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1,$stacked:true);
+	@include desktop_style{
+		.v3-b-inner-content {
+			padding:6% 0 10% 0;
+		}
+	}
+	@include max_min_style(1205px){
+		background-position-x: -5px;
+	}
+	@include tablet_style{
+		.v3-b-top-content, .v3-b-bottom-content{
+			text-align: left;
+		}
+	}
+}
+.v3-l-2{
+	.wp-image-1178{
+		@extend %mobile-only;
+	}
+	.wp-image-1178{
+		@extend %img-full-width;
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true,false);
+	}
+}
+.v3-l:not(.v3-l-2),.v3-c{
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-c-3{
+
+	@include desktop_style{
+		@include background_set(0 100%, cover);
+		.v3-c-content{
+			padding: 17% 1rem;
+		}
+		.v3-c-inner{
+			max-width: 1500px;
+		}
+	}
+}
+.v3-l-5{
+	.wp-image-1185{
+		@extend %desktop-only;
+	}
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(100% center, auto 100%)
+		}
+		.half-bg-inner{
+			padding:5% 1rem 60% 1rem;
+			@include absolute_box('.wp-image-1185',auto, 50%, -50% 0){
+				bottom: 0;
+				width: 100%;
+			};
+		}
+		
+	}
+}
+.v3-m-6{
+	@extend %mobile-only;
+}
+.v3-l-7{
+	.wp-image-1173{
+		@extend %mobile-only;	
+	}
+	.wp-image-1174{
+		@extend %desktop-only;
+	}
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center, 100% auto);
+			width: 65%;
+			left: 35%;
+		}
+		.half-bg-inner{
+			width: 35%;
+			padding: 3% 1rem;
+		}
+		.wp-image-1174{
+			margin: 2rem 0 0 0;
+		}
+	}
+}
+.v3-l-5,.v3-l-7{
+	background-color: #110f12;
+}
+.v3-m-9{
+	.wp-image-1191{
+		@extend %img-full-width;
+	}
+	@include desktop_style{
+		.ma {
+			width: 50%;
+			margin: 1rem 0 1rem auto;
+		}
+		@include absolute_box('.wp-image-1191', auto, 25%, -50% 0){
+			max-width: 50%;
+			bottom: 0;
+			max-height: 700px;
+		};
+		.big-image-inner{
+			margin-bottom: 5%;
+		}
+	}
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content ($color:#fff, $full_width:50% auto);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

@@ -1,0 +1,180 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+$btn-clr:#fff;
+$red-color:#901721;
+$v3b1: (
+btn-bg:$btn-clr,
+btn-txt:$red-color,
+btn-bg-hvr:transparent,
+input-plchldr:$btn-clr,
+input-txt:$btn-clr,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$btn-clr,
+btn-txt:$red-color,
+btn-bg-hvr:transparent,
+input-plchldr:$btn-clr,
+input-txt:$btn-clr,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$red-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+h1{
+	@include h_resize(4.5rem, 1100px 900px 868px 623px 570px 517px 479px 431px 397px 382px 350px);
+	font-weight: 800 !important;
+	.sub-hdr{
+		font-weight: 300;
+		font-size: 0.42em;
+	}
+}
+h2{
+	@include h_resize(3rem, 1100px 900px 868px 470px 367px);
+	font-weight: 800 !important;
+	@include tablet_style{
+		text-align: center;
+	}
+}
+h3{
+	font-weight: 800 !important;
+	@include h_resize(2.5rem, 1200px  868px 600px 430px)
+}
+.v3-b-1{
+	img{
+		margin: auto;
+	}
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include desktop_style{
+		.v3-b-inner-content {
+			max-width: 590px;
+		}
+	}
+	@include tablet_style{
+		background-color: $red-color;
+	}
+}
+.v3-c-2{
+	@include desktop_style{
+		@include background_set(0 100%, auto 100%);
+		.v3-c-content{
+			padding: 16% 0;
+		}
+	}
+
+}
+.v3-m{
+	@include m_section();
+}
+.v3-c, .v3-l:not(.v3-l-5) {
+	@include tablet_style{
+	@include cnl_padding_remove_flip();
+}
+}
+.v3-l{
+	.wp-image-1144{
+		margin: 2rem auto;
+		width: 80%;
+	}
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center, contain);
+		}
+	}
+}
+.v3-l-4, .v3-l-5{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 8% 0;
+		}
+	}
+}
+.v3-l-5{
+	color:#fff;
+	.wp-image-1138{
+		margin: 2rem auto;
+
+	}
+	
+	@include  tablet_style{
+		
+		.wp-image-1138, .ma{
+			
+			width: 85%;
+		}
+	}
+}
+.v3-l-6{
+	@include desktop_style{
+		margin-top: 5rem;
+		.half-bg-inner{
+			padding: 5% 0 15% 0;
+		}
+		.half-bg-img{
+			height: 130%;
+			top:0;
+		}
+	}
+}
+
+.v3-l-7{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 17% 0 5% 0;
+		}
+		.half-bg-img{
+			height: 130%;
+			top:auto;
+			bottom: 0;
+		}
+	}
+}
+.v3-e-8{
+	.three-across-item{
+		img{
+			margin: auto;
+				max-height: 200px;
+				max-width: 90px;
+		}
+	}
+	h4{
+		font-weight: 800;
+		font-size: 1.8rem;
+	}
+	@include desktop_style{
+		.three-across-items{
+			@include flex_set($justify:space-around,$align:flex-end);
+		}
+		.three-across-item{
+			@include flex_set($flow:column nowrap,$justify:space-between,$align:center);
+			margin: 0;
+
+		}
+	}
+}
+.v3-n:last-child {
+	
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content($full_width:70% auto,$color:#fff);
+
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

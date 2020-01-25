@@ -1,0 +1,244 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$light-gray-bg:#F8F8F8;
+$red-btn:#CC1123;
+$v3b1: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:#fff,
+input-txt:#fff,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#000,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:#fff,
+input-txt:#fff,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body{
+	font-family: 'Montserrat', sans-serif;
+
+		background-color: #000;
+		color:#fff;
+	}
+	.v3-wrap{
+		@include desktop_style{
+			@include background_set(0 0, 100% 20%, $bg-img:'https://tomsfinds.com/primo-ager/wp-content/uploads/sites/333/2019/10/section2bg-w.jpg');
+		}
+	}
+	.white-bg{
+		color:#101010;
+		h2{
+			color:#101010;
+		}
+		@include tablet_style{
+			@include cnl_padding_remove_flip();
+		}
+	}
+	h1,h2,h3{
+		color:#fff;
+		font-family: eloquent-jf-pro, serif;
+
+		@include h_resize(3.1rem, 1100px 868px 600px 565px 508px 420px 350px);
+	}
+	h1,h2 {
+		@include tablet_style{
+			text-align: left;
+		}
+	}
+	.v3-b-1 {	
+	   @include button_style ($v3b1);
+	   @include input_box_style ($v3b1);
+	   
+		@include desktop_style{
+			@include background_set( 0 0, contain);
+
+		}
+		@include tablet_style{
+			@include background_set(0 0, cover, $bg-img:'https://tomsfinds.com/primo-ager/wp-content/uploads/sites/333/2019/10/section2bg-w.jpg');
+			p{
+				text-align: left;
+			}
+			
+		}
+	}
+	.v3-l-2{
+		@include background_set(0 0, cover, $bg-img:'https://tomsfinds.com/primo-ager/wp-content/uploads/sites/333/2019/10/section2bg-w.jpg');
+		@include desktop_style{
+		@include absolute_box('.wp-image-1171',75%,0.5%){
+			width: 20%;
+		};
+		
+		.wp-image-1170{
+			padding: 1.5rem 0;
+			width: 90%;
+			margin: 2rem auto 1.5rem auto;
+		}
+		.half-bg-inner{
+			padding: 13% 2rem;
+		}
+		.half-bg-img{
+			@include background_set(center, contain);
+			height: 110%;
+			top: 0;
+			z-index: 1;
+		}
+		}
+		@include tablet_style{
+			@include cnl_padding_remove_flip(true,false);
+			.wp-image-1171{
+				display: none;
+			}
+			.wp-image-1170{
+				margin: 2rem 0;
+			}
+		}
+	}
+	.v3-c-3{
+		@include desktop_style{
+			@include absolute_box('.wp-image-1178', 12%, 22%){
+				width: 45%;
+			};
+			@include absolute_box('.wp-image-1179', 65%, 25%){
+				width: 45%;
+			};
+			@include absolute_box('.wp-image-1172',65%,87%){
+				width: 36%;
+			};
+			.v3-c-content {
+				padding: 10% 0 45% 0%;
+			}
+		}
+		@include tablet_style{
+			
+			.wp-image-1172{
+				display: none;
+			}
+			.wp-image-1178{
+						position: relative;
+						left: -20%;
+						margin: 1rem 0 -2rem 0 ;
+			}
+			.ma{
+				display: none;
+			}
+		}
+	}
+	.v3-c-4{
+		@include desktop_style{
+			@include absolute_box(".wp-image-1173", 20%, 10%);
+			.v3-c-content {
+				padding: 30% 0 4% 0%;
+			}
+			.v3-c-content{
+				max-width: 400px;
+			}
+		}
+		@include max_min_style(1100px){
+			.wp-image-1173{
+				width: 40%;
+			}
+		}
+		@include tablet_style{
+			@include cnl_padding_remove_flip(true,false);
+			
+			.wp-image-1173{
+				display: none;
+			}
+			@include absolute_box('.v3-c-inner',20vw, 50%, -50% 0){
+				max-width: 500px;
+				width: 100%;
+			}
+		}
+	@include max_style(430px){
+		@include absolute_box('.v3-c-inner',10vw, 50%, -50% 0){
+			max-width: 500px;
+			width: 100%;
+		}
+	}
+	@include max_style(400px){
+		@include absolute_box('.v3-c-inner',3vw, 50%, -50% 0){
+			max-width: 500px;
+			width: 100%;
+		}
+	}
+	}
+	.v3-q-7{
+		@include desktop_style{
+			.mw-710{
+				padding: 5% 0;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.wp-image-1174{
+				display: none;
+			}
+			@include absolute_box('video',50%,75%){
+				width: 50%;
+				height: 100%;
+			};
+			.txt-in{
+			    max-width: 50%;
+    			width: 430px;
+}
+			.wp-image-1175{
+				margin-top: 2rem;
+				max-width: 200px;
+			}
+		}
+		@include tablet_style{
+			.wp-image-1175{
+				display: none;
+			}
+			.wp-image-1174{
+				margin: 2rem 0;
+			}
+			.vido{
+				margin: 2rem 0;
+				max-width: 500px;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.v3-n:last-child {
+		@include button_style ($v3n);
+		@include input_box_style ($v3n);
+		@include n_content(){
+			@include absolute_box('.wp-image-1166',45%, 0%){
+				width: 400px;
+			};
+			@include absolute_box('.wp-image-1167', 45%, 100%){
+				width: 400px;
+			};
+		};
+		
+		@include tablet_style{
+			@include absolute_box('.wp-image-1166',0%, 0%){
+				width: 100px;
+			};
+			@include absolute_box('.wp-image-1167', 0, 100%){
+				width: 100px;
+			};
+		}
+	}
+	.modal {
+		.modal-inner {
+			.modal-text{
+				h2 { font-size:2.3rem !important; }
+				h2,p { color:#323438 !important }
+			} 
+		}
+		@include button_style ($modal);
+	}

@@ -1,0 +1,261 @@
+/*Variables*/
+$body-color: #000;
+$yellow-color:#FFC031;
+$top-cta-color:#707070;
+$light-gray:#F4F4F4;
+/*Button objects*/
+$v3b1: (
+btn-bg:$yellow-color,
+btn-txt:$top-cta-color,
+btn-bg-hvr:#fff,
+btn-brdr:$yellow-color,
+input-plchldr:$top-cta-color,
+input-txt:$top-cta-color,
+input-brdr:$top-cta-color,
+input-bg:transparent
+);
+$v3n: (
+	btn-bg:$yellow-color,
+	btn-txt:$top-cta-color,
+	btn-bg-hvr:#fff,
+	btn-brdr:$yellow-color,
+	input-plchldr:$top-cta-color,
+	input-txt:$top-cta-color,
+	input-brdr:$top-cta-color,
+	input-bg:transparent
+	);
+$modal: (
+	btn-bg:$yellow-color,
+	btn-txt:$top-cta-color,
+	btn-bg-hvr:#fff,
+	btn-brdr:$yellow-color,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	font-family: proxima-nova, sans-serif;	
+	color: $body-color;
+}
+.v3-wrap{
+	h1{
+		line-height: 0.9;
+		font-family: proxima-nova, sans-serif;
+		font-weight: 700;
+		text-transform: uppercase;
+		@include h_resize(3.7rem, 1100px 868px);
+		@include tablet_style{
+			width: min-content;
+			margin: auto;
+		}
+	}
+	h2, h3{
+		font-family: 'Cantata One', serif;
+		color: $yellow-color;
+		@include h_resize(2.5rem, 1140px 1050px 868px 500px 350px);
+	}
+	.sub-hdr{
+		display:block;
+		font-size:0.5em;
+		font-family: 'Cantata One', serif;
+		line-height: 1.5;
+		color: $yellow-color;
+		text-transform: none;
+	}
+	.light-gray-background{
+		background-color: $light-gray;
+	}
+	.color-rectangle{
+		width: 70px;
+		height: 1px;
+		margin: 1rem 0;
+		background-color: $yellow-color;
+	}
+	.flex-wraper{
+		@extend %flex-wrap;
+	}
+	.check-bullet{
+		padding: 0 0 0 2rem;
+		list-style-type: none;
+		li{
+			font-weight: 700;
+			color:$top-cta-color;
+			margin-bottom: 1rem;
+		@include blt_pnt_style(10px,-1rem){
+			@include background_set(center,contain,$bg-img:'https://tomsfinds.com/forever-passport/wp-content/uploads/sites/347/2019/12/f-Section-06-M.svg');
+			width: 25px;
+			height: 25px;
+		}
+	}
+	}
+}
+.v3-t-wrap{
+	@include t_section($l-width:1500px 95% auto);
+	@include desktop_style{
+		.half-bg-img-t{
+			@include background_set(center,contain);
+		}
+		.half-bg-inner-t{
+			padding: 7% 1rem;
+		}
+	}
+}
+.v3-b-1 {
+	.v3-b-top-content{
+		color: $top-cta-color;
+	}
+
+	@include button_style ($v3b1, $rounded-corners:true, $weight: 700);
+	@include input_box_style ($v3b1, $rounded-corners:true, $weight: 700);
+	@include desktop_style{
+
+		@include background_set(100% 0, cover);
+		.v3-b-wrap{
+			@include absolute_box('.hero-img', 75%, 23%){
+				width: 65%;
+			}
+		}
+		.v3-b-inner-content {
+			padding: 5% 0 0 0;
+		}
+		.lmlp-cta-wrap{
+			background-color: #fff;
+			border-radius: 30px;
+		}
+		.v3-b-bottom-content{
+			color: $top-cta-color;
+		}
+	}
+	@include tablet_style{
+		margin-bottom: 9rem;
+		.color-rectangle{
+			margin: 1rem auto;
+		}
+		 .lmlp.cf.lmlp-cta-wrap{
+			background-color: #fff;
+			border-radius: 30px;
+			padding: 1em 0.75em;
+		}
+		.v3-b-bottom-content{
+			margin: -1rem 0 -10rem 0;
+			color: $top-cta-color;
+		}
+	}
+}
+.v3-l-2{
+	@include t_section($text-basis:42%, $img-basis:58%);
+	@include desktop_style{
+		margin-bottom: -9rem;
+		.half-bg-img-t{
+			margin-bottom: -13rem;
+		}
+	}
+	@include max_min_style(1180px){
+		margin-bottom: -7rem;
+	}
+}
+
+.v3-m-3{
+	@include desktop_style{
+		padding-top: 0;
+		padding-bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.big-image{
+			width: 100%;
+			max-width: 1500px;
+		}
+		.ma{
+			margin: -3rem 0 ;
+			flex-basis: 50%;
+			width: 55%;
+		}
+	}
+	@include tablet_style{
+		@include m_section();
+	}
+}
+.v3-t-4-wrap{
+	@include desktop_style{
+		.half-bg-img-t{
+			margin-bottom: -10rem;
+		}
+	}
+}
+.v3-t-5-wrap{
+	.sct-5-desktop-img{
+		margin-top:2rem;
+		margin-bottom: -60%;
+	}
+	@include desktop_style{
+		.half-bg-inner-t{
+			padding: 7% 0 3% 0;
+		}
+		@include background_set(center,cover,$bg-img:'https://tomsfinds.com/forever-passport/wp-content/uploads/sites/347/2019/12/Section-04-W.jpg');
+
+	}
+}
+
+.v3-t-6-wrap{
+	@include t_section($text-basis:40%, $img-basis:60%,$mobile-direction:column-reverse);
+	@include desktop_style{
+		margin-bottom: -5rem;
+		.half-bg-inner-t{
+			padding: 25% 0 12% 0;
+		}
+		.half-bg-content-t{
+			max-width: 400px;
+		}
+
+	}
+	@include tablet_style{
+		color:#fff;
+		@include background_set(0 0, 100% auto,$bg-img:'https://tomsfinds.com/forever-passport/wp-content/uploads/sites/347/2019/12/Group_3698465.jpg');
+	}
+}
+
+.v3-t-7-wrap{
+	@include t_section($text-basis:55%, $img-basis:45%,$mobile-direction:column-reverse);
+ @include desktop_style{
+	 @include background_set(0 0, contain, $bg-img:'https://tomsfinds.com/forever-passport/wp-content/uploads/sites/347/2019/12/Sct-7bg-w.jpg');
+	 .half-bg-inner-t{
+		padding: 5% 0 7% 0;
+	 }
+	 .half-bg-content-t{
+		max-width: 570px;
+	}
+ }
+ @include tablet_style{
+	 margin-bottom: -2rem;
+ }
+}
+.v3-m-8{
+	@include m_section;
+}
+.v3-n:last-child {
+	@include button_style ($v3b1, $rounded-corners:true, $weight: 700);
+	@include input_box_style ($v3b1, $rounded-corners:true, $weight: 700);
+	@include n_content ($top-cta-color);
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

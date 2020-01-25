@@ -1,0 +1,278 @@
+$body-color: #000;
+$blue-color: #00A9C8;
+$v3b1: (
+btn-bg:$blue-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$blue-color,
+input-plchldr:#000,
+input-txt:#000,
+input-brdr:$blue-color,
+input-bg:#fff
+);
+$v3n: (
+	btn-bg:$blue-color,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$blue-color,
+	input-plchldr:#fff,
+	input-txt:#fff,
+	input-brdr:$blue-color,
+	input-bg:transparent
+);
+$modal: (
+	btn-bg:$blue-color,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$blue-color,
+);
+@import '_partial1'; /*brings the mixings in*/
+.sub-hdr{
+	display:block;
+	font-size:1rem;
+	color: $blue-color;
+}
+%desktop-only{
+	@include tablet_style{
+		display: none;
+	}
+}
+%mobile-only{
+	@include desktop_style{
+		display: none;
+	}
+}
+.desktop-only{
+	@extend %desktop-only;
+}
+.mobile-only{
+	@extend %mobile-only;
+}
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+}
+.v3-wrap{
+h2{
+	@include h_resize(3rem, 1100px 1000px 868px 466px 436px 403px 371px 337px);
+	color: $blue-color;
+}
+h1 {
+	@include h_resize(2.2rem, 1100px 1000px 868px 500px);
+	color:#fff;
+	font-weight: 900;
+}
+h3{
+	@include h_resize(1.7rem, 1100px 342px);	
+	color: $blue-color;
+	text-align: center;
+}
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center, contain);
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-m{
+	@include tablet_style{
+		@include m_section();
+	}
+}
+.v3-b-1 {
+	background-color: #000;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	.v3-b-bottom-content{
+		text-align: center;
+	}
+	@include desktop_style{
+		.v3-b-inner-content{
+			padding:5% 1rem
+		}
+		.v3-b-top-content{
+			img{
+				width: 90%;
+			}
+		}
+		@include background_set(0 0, 70% auto)
+	}
+	@include tablet_style{
+			padding: 1em;
+			margin-top: -10vw;
+			padding-top: 0;
+	}
+}
+.v3-l-2{
+	.wp-image-1209{
+		margin-top: 2rem;
+		width: 55%;
+
+	}
+	.wp-image-1210{
+		width: 50%;
+		max-width: 150px;
+	}
+}
+.v3-d-3 {
+	@include tablet_style{
+		border-top:1px solid $blue-color;
+		border-bottom:1px solid $blue-color;
+		margin: 1.5rem 1rem;
+	}
+}
+.v3-m-4{
+	@include background_set(center,cover,$bg-img:'https://tomsfinds.com/mizsei/wp-content/uploads/sites/342/2019/11/Mask_Group_4-1-1.jpg');
+	@include desktop_style{
+		.big-image{
+			max-width: 700px;
+		}
+		.ma{
+			width: 85%;
+		}
+		text-align: center;
+		
+	}
+	@include tablet_style{
+		padding-bottom: 1.5rem;
+	}
+}
+.v3-l-5{
+	.ma{
+		display: none;
+	}
+	.wp-image-1178{
+		@extend %desktop-only;
+	}
+	.half-bg-content{
+		text-align: center;
+	}
+	@include desktop_style{
+		.half-bg-img{
+			top:auto;
+			bottom: 0;
+			left:0px;
+			height: 120%;
+			width: 630px;
+
+		}
+		.half-bg-inner{
+			padding:5% 1rem;
+			width: 65%;
+		}
+		.half-bg-content {
+			max-width: 850px;
+			margin: auto;
+		}
+	}
+	@include max_min_style(1287px){
+		.half-bg-img{
+			left:-100px;
+		}
+	}
+	@include max_min_style(1130px){
+		.half-bg-img{
+			left:-150px;
+		}
+	}
+	@include max_min_style(1450px){
+		.half-bg-img{
+			left:-200px;
+		}
+	}
+}
+
+.v3-m-6{
+ background-color:#000;
+ @include desktop_style{
+	 padding: 5%;
+ }
+}
+.v3-m-7{
+	background-color:#000;
+	padding-bottom: 1.5rem;
+	@extend %mobile-only;
+}
+.v3-l-8{
+	.wp-image-1180{
+		margin-top: 1.5rem;
+	}
+	@include desktop_style{
+		.half-bg-img{
+			background-position-x: 100%;
+		}
+		.half-bg-inner{
+			padding: 0% 1rem;
+		}
+	}
+}
+.v3-m-9{
+	@include m_section();
+	@include tablet_style{
+		.big-image{
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+}
+.v3-m-10{
+	color: #fff;
+	@include desktop_style{
+		text-align: center;
+		background-color: #232323;
+		h2{
+			margin-top:0
+		}
+		.big-image-inner{
+			padding: 0;
+		}
+	}
+	@include tablet_style{
+		background-color: #000;
+		
+	}
+}
+.v3-c-11{
+	@include desktop_style{
+		.wp-image-1176 {
+			margin:2rem 0 0 0;
+			width: 75%;
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip(true, false);
+		.wp-image-1176 {
+			margin:1.7rem auto;
+			width: 90%;
+		}
+	}
+}
+.v3-n:last-child {
+	background-color: #222222;
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#00A9C8);
+	strong,p,b,span{
+		color:#fff !important;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

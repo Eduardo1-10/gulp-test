@@ -1,0 +1,345 @@
+/*this is my base scssfile */
+/*Etee <link rel='stylesheet' href='./css/style.css' type='text/css' media='all' />*/
+$body-color: #3A4F65;
+$v3b1: (
+btn-bg:#E47536,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:#9B9B9B,
+input-txt:#9B9B9B,
+input-brdr:rgb(68, 68, 68),
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#E47536,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:#BCE0FD,
+input-txt:#BCE0FD,
+input-brdr:rgb(68, 68, 68),
+input-bg:transparent
+);
+$modal: (
+btn-bg:#E47536,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+.page-wrap{
+	overflow:hidden;
+}
+body {
+ color: $body-color;
+ font-family: 'Lato', sans-serif;
+line-height: 1.8;
+}
+.order-btn{
+	display: block;
+	width: max-content;
+	margin: 1rem auto;
+	background-color: $body-color;
+	border-color: $body-color;
+}
+.r-btn{
+	border:2px solid $body-color;
+	border-radius: 40px;
+	padding: 0.5rem 1.3rem;
+	margin: 1rem auto;
+	display: block;
+	width:max-content;
+	.normal-page &{
+		text-decoration: none !important;
+		color:$body-color !important;
+	}
+	&:hover{
+		background-color: $body-color;
+		color:#fff !important;
+	}
+	
+}
+h1, h2, h3, h4{
+	font-family: 'Lato', sans-serif;
+	font-weight: 900 !important;
+	color: $body-color;
+
+}
+h1, h2, h3{
+	@include h_resize(2rem, 1100px);
+}
+h4{
+	@include h_resize(1.2rem, 400px);
+}
+.v3-q-1{
+	padding: 0;
+	img{
+		max-width: 170px;
+		margin: 0 auto;
+	}
+	p{
+		margin: 0;
+	}
+	background-color: #F8F8F8;
+}
+.v3-m{
+ @include m_section();
+}
+.v3-m-2{
+	text-align: center;
+	background-color: #FFF2C5;
+	.big-image-inner{
+		margin-bottom: -6rem;
+		position: relative;
+		z-index: 1;
+	}
+}
+.v3-q-3{
+	background-color: #FFF2C5;
+}
+.v3-f-4 {
+ .four-across-item:first-child{
+	 text-align: left;
+ }
+ 
+ @include desktop_style{
+	.order-btn{
+		margin: 1rem 0;
+	}
+	 .mbl-only{
+		display: none;
+	 }
+	
+ }
+ @include tablet_style{
+	.four-across-items{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.four-across-item{	
+		order: 1;
+	}
+	.four-across-item:first-child{
+		h2{
+			display: none;
+		}
+		text-align: center;
+		order: 2;
+	}
+ }
+}
+.v3-m-6{
+	background-color: #feda00;
+	@include desktop_style{
+		.big-image-inner{
+			text-align: center;
+			margin-bottom: -10rem;
+			position: relative;
+			z-index: 1;
+		}
+	}
+}
+.v3-c-7{
+	@include desktop_style{
+	.wp-image-1243{
+		display: none;
+	}
+}
+@include tablet_style{
+	.wp-image-1242{
+		display: none;
+	}
+	@include cnl_padding_remove_flip();
+	background-color: #badeec;
+}
+}
+.v3-f-10{
+	.four-across-item{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 1.5rem auto;
+		max-width: 380px;
+		min-width: 280px;
+		border: 1px solid #3a4f6554;
+		padding: 1rem 1.5rem;
+	}
+	p{
+		margin-top: 1.5rem;
+		text-align: left;
+	}
+	.name{
+		font-weight: 900;
+		color: #BAE0EE;
+	}
+	@include desktop_style{
+		.four-across-items {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: stretch;
+			margin-bottom: 2rem;
+		}
+	}
+	@include tablet_style{
+		.four-across-item{
+			margin: 1.5rem auto;
+			width: 90%;
+			max-width: 400px;
+		}
+	}
+}
+.v3-c-11{
+	.v3-c-content{
+		text-align: center;
+		max-width: 390px;
+		
+	}
+	@include desktop_style{
+		
+		.v3-c-content {
+			padding: 1rem;	
+    
+}
+	}
+	@include tablet_style{
+		@include background_set(center, contain, $bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/10/7-Mobile.jpg');
+		background-color: #ffd900;
+		.ma{
+			display: none;
+		}
+	}
+}
+.v3-e-12 {
+	.three-across-item {
+		background-color: #F8F8F8;
+		position: relative;
+		[class*='wp-image']:not([class*='awp-image']){
+			position: absolute;
+			margin: 0;
+		}
+		.rib-bottom{
+			bottom: 0;
+			right: 0;
+		}
+		.rib-top{
+			top:0;
+			left: 10%;
+		}
+	}
+	@include desktop_style{
+		padding: 3rem 1rem 6rem 1rem;
+		.three-across-items{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.three-across-item{
+			margin: 0  0.5rem;
+			&:first-child{
+				[class*='awp-image']{
+					margin-bottom: 2.5rem;
+				}
+			}
+			&:first-child, &:last-child{
+				height: 450px;
+				[class*='awp-image']{
+					max-height: 200px;
+				}
+			}
+			&:nth-child(2){
+				height: 550px;
+				[class*='awp-image']{
+				max-height: 250px;
+			}
+			}
+		}
+	}
+	@include tablet_style{
+		.three-across-item {
+			padding: 1rem;
+			margin: 1rem auto;
+			max-width: 400px;
+			width: 90%;
+		}
+	}
+}
+.v3-c-13{
+	background-color: #A2C023;
+	ul{
+		list-style-type: none;
+		li{
+			margin-bottom: 1.2rem;
+		 @include blt_pnt_style(9px,-1rem){
+			 background-color: #fff;
+			 width: 9px;
+			 height: 9px;
+			 transform: rotate(45deg);
+		 }
+		 @include blt_pnt_style(4.5px,-1.3rem,$objct:after){
+			background-color: #A2C023;
+			width: 9px;
+			height: 15px;
+			transition: 0.1s;
+		}
+		}
+	}
+	@include desktop_style{
+		@include background_set(0 center, 100% auto);
+		.v3-c-content{
+			padding: 3% 1rem;
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-d-14{
+
+	@include desktop_style{
+		.v3-d-top-content {
+			max-width: 1200px;
+		    margin:0 auto;
+			padding: 0 1rem;
+			text-align: left;
+		}
+	}
+	.footer-txt-icon {
+		margin-left: 3rem;
+		padding-left: 0.5rem;
+		@include blt_pnt_style(9px, -2.5rem){
+			height: 2rem;
+			width: 2rem;
+		};
+		
+		&.icon-1{
+			&::before{
+				@include background_set(center,contain,$bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/10/f-Mail-Icon.svg')
+			}
+		}
+		&.icon-2{
+			&::before{
+				@include background_set(center,contain,$bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/10/f-Drop-Icon.svg')
+			}
+		}
+	}
+}
+.v3-c-13, .v3-f-4,.v3-d-14{
+ h2,h3{
+	 color: #fff;
+ }
+	color:#fff
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

@@ -1,0 +1,249 @@
+$body-color: #121212;
+$ewheels-green:#284319;
+$bottom-button-green:#5DBC46;
+$v3b1: (
+btn-bg:$ewheels-green,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$ewheels-green,
+input-plchldr:$ewheels-green,
+input-txt:$ewheels-green,
+input-brdr:$ewheels-green,
+input-bg:transparent
+);
+$v3b1-m: (
+btn-bg:$bottom-button-green,
+btn-txt:$ewheels-green,
+btn-bg-hvr:$ewheels-green,
+btn-brdr:$bottom-button-green,
+input-plchldr:$bottom-button-green,
+input-txt:$bottom-button-green,
+input-brdr:$bottom-button-green,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$bottom-button-green,
+btn-txt:#000,
+btn-bg-hvr:transparent,
+btn-brdr:$bottom-button-green,
+input-plchldr:#000000,
+input-txt:#000000,
+input-brdr:#000000,
+input-bg:transparent
+);
+$modal: (
+btn-bg:#000000,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.75;
+ 	color: $body-color;
+}
+
+
+
+.v3-wrap{
+	h1, h2, h3,h5{
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 300;
+		color: $ewheels-green;
+		@include tablet_style{
+			text-align: center;
+		}
+	}
+	h1, h2, h3{
+		@include h_resize(3rem, 1100px 1030px 868px 600px 470px 440px 390px);
+	}
+	h5{
+		text-transform: uppercase;
+		font-weight: 700;
+		@include h_resize(1.3rem, 868px);
+		@include tablet_style{
+			color: $bottom-button-green;
+		}
+	}
+	@include tablet_style{
+		@include absolute_box('.top-txt-mobile', 0, 50%,-50% 0){
+			width: 90%;
+		};
+		style + .ma {
+			padding-top: 15rem;
+			background-color: #fbfbfb;
+		}
+	}
+	@include max_style(610px){
+		style + .ma {
+			padding-top: 50vw;
+		}
+	}
+	@include max_style(520px){
+		style + .ma {
+			padding-top: 60vw;
+		}
+	}
+	@include max_style(472px){
+		style + .ma {
+			padding-top: 70vw;
+		}
+	}
+	@include max_style(412px){
+		style + .ma {
+			padding-top: 80vw;
+		}
+	}
+	@include max_style(366px){
+		style + .ma {
+			padding-top: 90vw;
+		}
+	}
+	@include max_style(350px){
+		style + .ma {
+			padding-top: 105vw;
+		}
+	}
+	@include max_style(340px){
+		style + .ma {
+			padding-top: 110vw;
+		}
+	}
+}
+
+.v3-m{
+	text-align: center;
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center,contain);
+		}
+		.half-bg-inner{
+			padding: 1% 1em;
+		}
+	}
+}
+.v3-b-1 {
+	@include desktop_style{
+		@include button_style ($v3b1);
+		@include input_box_style ($v3b1);
+		@include background_set(100% 0, cover);
+		.txt-width{
+			max-width: 450px;
+		}
+		.v3-b-inner-content{
+			padding: 5% 0 20% 0;
+			max-width: 550px;
+		}
+	}
+
+	@include tablet_style{
+		@include button_style ($v3b1-m);
+		@include input_box_style ($v3b1-m);
+		background-color: $ewheels-green;
+		.v3-b-bottom-content {
+			color: #fff ;
+		}
+	}
+}
+.v3-m-2{
+	background-color: #f7f7f7;
+	padding: 2rem 1rem;
+	@include desktop_style{
+		padding: 3rem 1rem;
+	}
+
+}
+.v3-l{
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+	}
+}
+.v3-q-3{
+	padding: 0;
+	@include desktop_style{
+		.v3-q-inner {
+			max-width: 100%;
+		}
+	}
+}
+.v3-m-4{
+	@include tablet_style{
+		border-bottom: 0.1em solid $ewheels-green;
+		padding-bottom: 2.5rem;
+		.ma{
+			max-width: 300px;
+		}
+	}
+}
+.v3-m-7{
+	@include tablet_style{
+		.ma{
+			max-width: 350px;
+		}
+	}
+}
+.v3-m-8,.v3-m-12{
+	@include m_section();
+}
+.flex-wrap{
+	@extend %flex-wrap;
+	@include desktop_style{
+		max-width: max-content;
+		margin: auto;
+		.flex-half:first-child{
+			margin-right: 1rem;
+		}
+	}
+	@include tablet_style{
+		.flex-half:first-child{
+			margin-bottom: 1rem;
+		}
+	}
+}
+.v3-q-9,.v3-q-10{
+	.section-text{
+		max-width: 600px;
+		margin: auto;
+	}
+ @include desktop_style{
+	 .v3-q-inner{
+		 max-width: 90%;
+		 width: 90%;
+	 }
+	 .section-text{
+		text-align: center;
+	 }
+ }
+ @include tablet_style{
+	 padding: 1rem 0;
+	 .section-text{
+		 padding: 0 1rem;
+	 }
+ }
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content ($color:#121212,$full-width:60% auto);
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

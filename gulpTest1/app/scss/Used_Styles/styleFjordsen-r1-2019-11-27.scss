@@ -1,0 +1,247 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$light-gray-bg:#F8F8F8;
+$red-btn:#FDB12B;
+$dark-text:#2F2F2F;
+$v3b1: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$red-btn,
+input-plchldr:$dark-text,
+input-txt:$dark-text,
+input-brdr:$dark-text,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+btn-brdr:$red-btn,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:#fff,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$red-btn,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$red-btn,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body{
+	font-family: proxima-nova, sans-serif;
+	font-size: 19px;
+	line-height: 1.8;
+	color: #fff;
+	.dark-text{
+		color:$dark-text;
+	}
+	.pd-btn {
+		padding-bottom: 2.5rem;
+	}
+	}
+	
+
+.v3-wrap input#gform_submit_button_5{
+	@include tablet_style{
+		font-size: 0.9em;
+	}
+}
+	.v3-wrap{
+		
+			@include tablet_style{
+				@include absolute_box('h1',-0.5rem,1rem,0 0){
+					width: 90%;
+					max-width: 500px;
+				}
+			}
+		
+		h1,h2,h3{
+			font-family: 'Work Sans', sans-serif;
+		}
+		h2,h1{
+			@include h_resize(2.9rem, 1100px 868px 515px 460px 429px 400px 371px 344px);
+		}
+		.orange-txt{
+			color:#FD942B;
+			&.orange-txt__block{
+				display: block;
+			}
+		}
+		.orange-line{
+			background:#FD942B;
+			height: 2px;
+			width: 55px;
+			@include tablet_style{
+				display: none;
+			}
+		}
+	}
+	
+	.v3-m:not(.v3m__full) {
+		@include m_section($text-box:900px,$padding_off:false,$width:1200px 90%);
+		.big-image{
+			text-align: center;
+		}
+	}
+	.v3m__full{
+		@include m_section();
+	}
+	.v3-b-1 {	
+	   @include button_style ($v3b1);
+	   @include input_box_style ($v3b1);
+
+	  @include desktop_style{
+		  .v3-b-inner-content{
+			  max-width: 570px;
+		  }
+	  }
+	  @include tablet_style{
+		 @include v3_b_top_down($color:$dark-text);
+	  }
+	}
+	.v3-l-2{
+		
+		@include tablet_style{
+			@include cnl_padding_remove_flip(true, false)
+		}
+	}
+	.v3-m-3{
+		background-color: #151515;
+	
+		@include tablet_style{
+			.ma{
+				width: 73%;
+			}
+		}
+	}
+	.v3-c-4{
+		@include tablet_style{
+			@include cnl_padding_remove_flip();
+			p,h2{
+				color:$dark-text;}
+		}
+	}
+	.v3-c-5{
+		@include tablet_style{
+			@include cnl_padding_remove_flip(true, false);
+			p{
+				color:$dark-text;
+			}
+			@include absolute_box('.mobile-absolute',0,1rem,0 0){
+				width: 90%;
+				max-width: 500px;
+			}
+		}
+	}
+	.v3-q{
+		@include desktop_style{
+			text-align: center;
+		}
+		
+	}
+	.v3-c-7{
+		@include tablet_style{
+			@include cnl_padding_remove_flip(true,false);
+			background-color:#1D2225;
+		}
+	}
+	.v3-c-6{
+		@include desktop_style{
+			.v3-c-content{
+				padding: 18% 0;
+				max-width: 400px;
+			}
+		}
+		@include tablet_style{
+			background-color: #1D2225;
+			@include cnl_padding_remove_flip(true,false);
+		}
+	}
+	.v3-m-8{
+		@include desktop_style{
+			.wp-image-1204{
+				display: none;
+			}
+			.m_box {
+				color: #fff;
+			}
+			p:last-child{
+				font-size: 1.3rem;
+			}
+		}
+		@include tablet_style{
+			@include background_set(center, 100% auto, $bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-02-M.jpg');
+			.ma {
+				display: none;
+			}
+			.big-image-inner{
+				padding: 0 !important;
+			}
+			h2, .m_box{
+				padding: 1rem;
+			}
+		}
+	}
+	.v3-c-8{
+		text-align: center;
+		@include desktop_style{
+			.wp-image-1163{
+				display: none;
+			}
+			.v3-c-content{
+				max-width: 900px;
+				padding: 2% 0;
+			}
+			.c-in{
+				width: 70%;
+				min-width: 600px;
+				margin: auto;
+				h3{
+					font-size: 1.8rem !important;
+				}
+			}
+		}
+		@include tablet_style{
+			.ma{
+				display: none;
+			}
+			@include background_set(center,cover,$bg-img:'https://tomsfinds.com/fjordsen/wp-content/uploads/sites/334/2019/10/section-08-M.jpg');
+			.wp-image-1164{
+				display: none;
+			}
+			.wp-image-1163{
+				margin: 2rem auto;
+			}
+			h3{
+				font-size: 1.5rem !important;
+			}
+		}
+	}
+	.v3-m-11{
+		@include desktop_style{
+			padding: 3rem 1rem;
+		}
+		@include tablet_style{
+			padding: 1.5rem 1rem;
+		}
+	}
+	.v3-n:last-child {
+		@include button_style ($v3n);
+		@include input_box_style ($v3n);
+		@include n_content();
+		background-color: #1D2225;
+	}
+	.modal {
+		.modal-inner {
+			.modal-text{
+				h2 { font-size:2.3rem !important; }
+				h2,p { color:#323438 !important }
+			} 
+		}
+		@include button_style ($modal);
+	}

@@ -1,0 +1,200 @@
+/*this is my template scss file*/
+/*Link to my css file <link rel="stylesheet" href="./css/style.css">*/
+/*vertoHeadphones.scss*/
+$dark-gray:#272727;
+$body-txt-color:#141414;
+$v3b1: (
+btn-bg:$dark-gray,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+input-plchldr:$dark-gray,
+input-txt:$dark-gray,
+input-brdr:$dark-gray,
+input-bg:transparent
+);
+$v3n: (
+btn-bg:$dark-gray,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+input-plchldr:$dark-gray,
+input-txt:$dark-gray,
+input-brdr:$dark-gray,
+input-bg:transparent
+);
+$modal: (
+btn-bg:$dark-gray,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+
+body{
+	color:$body-txt-color !important;
+}
+h1,h2,h3 {
+	color:$dark-gray;
+	font-family: bebas-neue-by-fontfabric, sans-serif !important;
+font-weight: 300 !important;
+	@include h_resize(4.5rem,1170px 1100px 946px 901px 869px 600px 500px 450px 400px 370px 350px);
+}
+h1{
+	@include desktop_style{
+		color:$dark-gray;
+		@include blt_pnt_style(10%,115%){
+			@include background_set(center,contain,$bg-img:'https://tomsfinds.com/verto-headphone/wp-content/uploads/sites/324/2019/11/hero-w-m.png');
+			width:600px;
+			height:600px;
+		};
+	}
+	@include tablet_style{
+		@include blt_pnt_style(-10%,76%){
+			@include background_set(center,contain,$bg-img:'https://tomsfinds.com/verto-headphone/wp-content/uploads/sites/324/2019/10/hero-w.png');
+			width:47vw;
+			height:250px;
+		};
+	}
+}
+.v3-m{
+	padding:0 !important;
+	
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-img{
+			background-size:contain;
+		}
+	}
+	@include tablet_style{
+		@include cnl_padding_remove_flip();
+		.wp-image-1154,.wp-image-1142{
+			display:none;
+		}
+	}
+}
+.v3-b-1 {
+	background-color:#F0F0F0;
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	@include desktop_style{
+		@include background_set(0 0, auto 100%,$color:#e2e2e2);
+		.v3-b-inner-content{
+			padding: 5% 0 5% 15rem !important;
+			max-width: 680px !important;
+		}
+		.v3-b-top-content, .v3-b-bottom-content {
+			text-align: left !important;
+		}
+		
+	}
+	@include max_min_style(1213px){
+		background-position: -50px;
+	}
+	@include max_min_style(1057px){
+		background-position: -80px;
+	}
+	@include tablet_style{
+		.v3-b-top-content, .v3-b-bottom-content {
+			text-align:left;
+		}
+	}
+}
+.two-items{
+	@include desktop_style{
+		display:flex;
+		align-content:center;
+		justify-content:space-around;
+		.two-item{
+			flex-basis:50%;
+		float:none;
+}
+	}
+	
+}
+.v3-q{
+	padding:0 !important;
+	.mw-710 {
+			max-width:100% !important;
+		}
+	.sctn-4-top-cntent{
+		 padding:1rem;
+			max-width:600px;
+		margin:auto;
+		}
+	@include desktop_style{
+		.sctn-4-top-cntent{
+			max-width:1000px;
+			text-align:center;
+		}
+	}
+
+}
+.v3-d-2{
+	.wp-image-1145{
+		margin: auto;
+	}
+}
+.v3-l-5{
+	@include desktop_style{
+		.half-bg-inner {
+			padding: 1% 1rem 50% 1rem !important;
+			
+		}
+		.half-bg-img{
+			@include background_set(center 100%, contain);
+		}
+		@include absolute_box('.wp-image-1154',auto,25%,-50% 0){
+			bottom: 0;
+			width: 50%;
+			margin:0;
+		};
+}
+@include tablet_style{
+	.wp-image-1154{
+		display: none;
+	}
+}
+}
+
+.v3-m-4 {
+	@include desktop_style{
+		text-align: center;
+	}
+	@include m_section();
+}
+
+.v3-n:last-child {
+	background-color:#EFEFEF;
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include desktop_style {
+		font-weight: 600 !important;
+		.color-cta-content {
+			max-width: 55%;
+		}
+		.color-cta-inner {
+			@include absolute_box('.wp-image-1147',45%, 90%){
+				width:65%;
+			};
+		}
+		.lmlp-cta-wrap {
+			max-width: 500px;
+		}
+	}
+	h3,p,strong,b{
+		color:$dark-gray;
+	}
+}
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

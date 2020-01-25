@@ -1,0 +1,124 @@
+/* ****************
+---Variables----
+**************** */
+
+/*color variables*/
+$body-color: #000;
+
+/*layout variables*/
+$sections-max-width:1600px;
+$sections-width:90%;
+
+/*Button object - variables*/
+$v3b1: (
+btn-bg:#000000,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+input-plchldr:rgb(43, 43, 43),
+input-txt:rgb(43, 43, 43),
+input-brdr:rgb(43, 43, 43),
+input-bg:transparent
+);
+$v3n: (
+btn-bg:#E47536,
+btn-txt:#fff,
+btn-bg-hvr:transparent,
+btn-brdr:#000000,
+input-plchldr:#BCE0FD,
+input-txt:#BCE0FD,
+input-brdr:rgb(68, 68, 68),
+input-bg:transparent
+);
+$modal: (
+btn-bg:#E47536,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#000000,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+/*generic css*/
+.page-wrap{
+	overflow:hidden;
+}
+body {
+	color: $body-color;
+}
+.v3-wrap{
+	h1, h2, h3{
+		@include h_resize(3.7rem, 1100px);
+	}
+	.sub-hdr{
+	display:block;
+	font-size:0.5em;
+	}
+}
+
+/*layout presets*/
+%max-width-section{
+	max-width: $sections-max-width;
+	width: $sections-width;
+	margin: auto;
+}
+%max-width-e-section{
+	.three-across-items{
+		max-width: $sections-max-width;
+		width: $sections-width;
+	}
+	.three-across-item{
+		padding: 0;
+	}
+	@include desktop_style{
+		.three-across-items{
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+		}
+		.three-across-item{
+			flex-basis: 32%;
+			margin: 0;
+			max-width: 100%;
+		}
+	}
+}
+%max-width-t-section{
+	@include t_section($l-width:$sections-max-width $sections-width auto, $no-padding:false);
+	@include tablet_style{
+		.v3-l{
+		width: $sections-width;
+		max-width: 700px;
+		margin: auto;
+	}
+}
+}
+%max-width-m-section{
+	@include m_section($width:$sections-max-width $sections-width auto);
+}
+
+/*section specific css*/
+.v3-b-1 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+}
+
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#444);
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

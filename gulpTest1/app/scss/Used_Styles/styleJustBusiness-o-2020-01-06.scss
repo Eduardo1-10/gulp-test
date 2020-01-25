@@ -1,0 +1,354 @@
+/*Variables*/
+$body-color: #fff;
+$red-color:#DF2329;
+/*Button objects*/
+$v3b1: (
+btn-bg:$red-color,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:$red-color,
+input-plchldr:#fff,
+input-txt:#fff,
+input-brdr:$red-color,
+input-bg:transparent
+);
+$v3n: (
+	btn-bg:$red-color,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$red-color,
+	input-plchldr:#fff,
+	input-txt:#fff,
+	input-brdr:$red-color,
+	input-bg:transparent
+);
+$modal: (
+	btn-bg:$red-color,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:$red-color,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	color: $body-color;
+	background-color: #040707;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.7;
+}
+.v3-wrap{
+	h1, h2, h3{
+		font-family: 'Oswald', sans-serif;
+		@include h_resize(3.7rem, 1100px 700px 600px 500px 450px 420px 379px 343px);
+	}
+	h4{
+		font-family: 'Lato', sans-serif;
+		font-weight: 900;
+		font-size: 1.1rem;
+	}
+	.sub-hdr{
+	display:block;
+	font-size:0.5em;
+	}
+	.red-txt{
+		color: $red-color;
+	}
+	.warning-h{
+		@include h_resize(4rem, 1000px 868px 600px 450px 370px 344px);
+		width: max-content;
+		max-width: 100%;
+		margin: auto;
+		@include blt_pnt_style(50%,-2.5rem){
+			width: 1em;
+			height: 1em;
+			@include background_set(center, contain, $bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/WarningSign.svg')
+		}
+		@include blt_pnt_style(50%,auto,$objct:after,$center:50% -50%){
+			width: 1em;
+			height: 1em;
+			right: -2.5rem;
+			@include background_set(center, contain, $bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/WarningSign.svg')
+		}
+	}
+	.underlined-h2{
+		border-bottom: 3px solid $red-color;
+		width: 150px;
+		max-width: 100%;
+		margin: 1rem 0;
+	}
+	@include desktop_style{
+		.text-center-d{
+			text-align: center;
+		}
+		 .text-center-d .underlined-h2{
+			margin: 1rem auto;
+		}
+		.underlined-h2{
+			width: 200px;
+		}
+		.m-sct-title-left{
+			.big-image-inner{
+				width: 100%;
+				max-width: 100%;
+				margin: auto;
+			}
+			.big-image {
+				max-width: 1250px;
+				width: 90%;
+			}
+		}
+		.f-sct-title-left{
+			width: 90%;
+			max-width: 1250px;
+			margin: auto;
+			text-align: left;
+			padding: 1rem;
+
+			.four-across-top-text{
+				
+				width: max-content;
+				max-width: 100%;
+				margin: 0;
+				.underlined-h2 {
+					width: 1.3em;
+				}
+			}
+			.four-across-item{
+				&:first-child{
+					padding-left: 0;
+				}
+			} 
+		}
+		.q-sct-title-left{
+			.v3-q-inner{
+				max-width: 1250px;
+				width: 90%;
+			}
+		}
+	}
+}
+.v3-q-1{
+	padding-top: 0;
+	.v3-q-inner{
+		max-width: 100%;
+		img{
+			margin: auto;
+		}
+	}
+}
+.v3-b-2 {
+	@include button_style ($v3b1);
+	@include input_box_style ($v3b1);
+	.v3-b-inner-content{
+		@include absolute_box('.absolute-hero-img',50%,25%,-120% -50% ){
+			width: 50vw;
+			max-width: 1200px;
+			@extend %desktop-only;
+		};
+	}
+	
+	@include desktop_style{
+		margin-top:-7%;
+		.v3-b-inner-content{
+			padding: 0 0 2% 0;
+		}
+	}
+	@include max_min_style(1150px){
+		.v3-b-inner-content .absolute-hero-img{
+			transform: translate(-130%, -50%);
+		}
+	}
+	@include tablet_style{
+		background-color: #040707;
+	}
+}
+.v3-q-3{
+	border-top: solid 3px $red-color;
+	border-bottom: solid 3px $red-color;
+	.v3-q-inner{
+		max-width: 1100px;
+		text-align: center;
+	}
+	@include desktop_style{
+		@include blt_pnt_style(50%,-30px){
+			@include background_set(0 0,contain,$bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/Image_14.svg');
+			height: 500px;
+			width: 300px;
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+		@include blt_pnt_style(50%,auto,$objct:after,$center:0 -50%){
+			@include background_set(100% 100%,contain,$bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/Image_14.svg');
+			height: 500px;
+			width: 300px;
+			right: -30px;
+		}
+		margin: 7% 0;
+	}
+	@include tablet_style{
+		@include blt_pnt_style(50%,-90px){
+			@include background_set(0 0,contain,$bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/Image_14.svg');
+			height: 500px;
+			width: 300px;
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+		@include blt_pnt_style(50%,auto,$objct:after,$center:0 -50%){
+			@include background_set(100% 100%,contain,$bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/Image_14.svg');
+			height: 500px;
+			width: 300px;
+			right: -90px;
+		}
+	}
+	.flex-wrap{
+		margin: 3rem 0;
+		@extend %flex-wrap;
+		list-style-type: none;
+		text-align: center;
+		text-transform: uppercase;
+		li{
+			margin-bottom: 1rem;
+		}
+		@include tablet_style{
+			margin: 2rem 0;
+			flex-flow: row wrap;
+		}
+		@include max_style(400px){
+			font-size: 0.9em;
+		}
+		@include max_style(350px){
+			font-size: 0.8em;
+		}
+	}
+}
+.v3-t-4-wrap{
+	@include t_section($text-basis:45%,$img-basis:55%,$mobile-direction:column-reverse);
+	@include desktop_style{
+		.half-bg-img-t {
+			@include background_set(center,contain)
+		}
+		.half-bg-inner-t{
+			padding: 5% 0;
+			.half-bg-content-t{
+				max-width: 400px;
+			}
+		}
+	}
+}
+.v3-t-5-wrap{
+	@include t_section($l-width: 1500px 85% 0,$mobile-direction:column-reverse);
+	@include desktop_style{
+		@include background_set(100% center, auto 100%,$bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/blood.png');
+		.half-bg-img-t{
+			@include background_set(0 0 , contain);
+		}
+		.half-bg-inner-t{
+			padding: 15% 0;
+		}
+	}
+}
+.v3-m-6 {
+	@include desktop_style{
+		text-align: center;
+	}
+	@include tablet_style{
+		@include m_section();
+	}
+}
+.v3-d-9,.v3-d-10{
+	.num-holder {
+		max-width: 70%;
+		margin: 0 0 0 auto;
+		@include blt_pnt_style(50%,-2rem,-50% -50%){
+			width: 5rem;
+			height: 5rem;
+			font-size: 5rem;
+			font-weight: 900;
+			color: $red-color;
+			line-height: 1;
+			@include desktop_style{
+				left: 0;
+			}
+		}
+		&.num-1::before{
+			content: '1';
+		}
+		&.num-2::before{
+			content: '2';
+		}
+		&.num-3::before{
+			content: '3';
+		}
+		&.num-4::before{
+			content: '4';
+		}
+	}
+	@include desktop_style{
+		margin-bottom: 3%;
+		.num-holder{
+			padding-left: 3rem;
+			margin: auto;
+		}
+		.two-items{
+			display: flex;
+			align-items: stretch;
+			max-width: 1250px;
+			.two-item {
+				margin: 0;
+				
+			}
+			.two-item-content{
+				height: 100%;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+	}
+}
+.v3-m-11{
+	@include m_section();
+}
+.v3-t-13-wrap {
+	@include t_section($text-basis:45%,$img-basis:55%,$mobile-direction:column-reverse);
+	@include desktop_style{
+		margin: 3% 0;
+		.half-bg-content-t{
+			max-width: 400px;
+		}
+	}
+}
+.v3-f-15{
+	@include tablet_style{
+		text-align: left;
+	}
+}
+.v3-n:last-child {
+	@include button_style ($v3n);
+	@include input_box_style ($v3n);
+	@include n_content (#fff){
+		@include background_set(-100px 100%, auto 100%, $bg-img:'https://tomsfinds.com/just-business/wp-content/uploads/sites/350/2020/01/blood2.png')
+	};
+	@include tablet_style{
+		border-top: 3px solid $red-color;
+	}
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

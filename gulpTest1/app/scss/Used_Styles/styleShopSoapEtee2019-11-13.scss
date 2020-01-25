@@ -1,0 +1,422 @@
+/*this is my base scssfile */
+/*Etee <link rel='stylesheet' href='./css/style.css' type='text/css' media='all' />*/
+$body-color: #010101;
+$highlight-color:#23FAFF;
+$light-yellow:#FEFFED;
+$modal: (
+btn-bg:$highlight-color,
+btn-txt:$body-color,
+btn-brdr:$highlight-color,
+btn-bg-hvr:#fff,
+);
+@import '_partial1'; /*brings the mixings in*/
+.page-wrap{
+	overflow:hidden;
+	max-width: 1920px;
+}
+#container{
+	margin: 1rem;
+	margin-top: 0;
+	@include desktop_style{
+		margin: 0 2rem 2rem 2rem;	
+	}
+}
+body {
+ color: $body-color;
+ font-family: 'Lato', sans-serif;
+line-height: 1.8;
+background: rgb(255,245,208);
+background: linear-gradient(180deg, rgba(255,245,208,1) 0%, rgba(250,192,238,1) 100%);
+}
+.v3-wrap{
+	[class*="v3-"]{
+		background-color: #fff;
+	}
+	.bg-feffed,.v3-d-14,.v3-c-12,.v3-d-15{
+		background-color:$light-yellow;
+	}
+	.v3-c-inner,.v3-c-content,.v3-c-content--left,.v3-q-inner {
+		background-color: transparent;
+	}
+	.v3-l-7,.v3-l-8,.v3-l-9,.v3-q-10,.v3-e-6{
+		background-color: rgba($color: #fff, $alpha: 0.8);
+	}
+}
+.price{
+	font-weight: 800;
+	.price-nd{
+		color: #C7C7C7;
+		text-decoration: line-through;
+	}
+}
+.no-blt {
+	list-style-type: none !important;
+}
+.btn-style {
+	color:#000;
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 300;
+	background-color: $highlight-color;
+	border-color: $highlight-color;
+	display: block;
+	width:max-content;
+	margin: 1.5rem auto;
+	text-transform: uppercase;
+	-webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+-moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+	&:hover{
+	background-color: #fff;
+	border-color: $highlight-color;
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+-moz-box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+transition:0.4s
+	}
+	&:focus{
+		background-color: #fff;
+		border-color: $highlight-color;
+		-webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+	box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+	transition:0.4s
+		}
+		@include desktop_style{
+			&.desktop-no-m {
+				margin: 1.5rem 0;
+			}
+		}
+		
+		@include tablet_style{
+			&.mobile-width{
+				width: 80%;
+				max-width: 300px;
+			}
+		}
+		
+}
+h1, h2, h3, h4{
+	font-family: 'Lato', sans-serif;
+	font-weight: 900 !important;
+	color: $body-color;
+
+}
+h1, h2{
+	@include h_resize(2rem, 1100px 868px);
+}
+h3{
+	@include h_resize(1.5rem, 1100px 868px);
+}
+h4{
+	@include h_resize(1.2rem, 400px);
+}
+.hglg-txt{
+	font-family: 'Source Code Pro', monospace;
+	background-color: rgba(35, 250, 255, 0.5);
+	width: max-content;
+	max-width: 100%;
+	padding-right: 1.55rem ;
+	line-height: 0.6;
+	border-radius: 30px;
+	&.hglght__m{
+		margin: 0.3rem 0;
+		
+		@include desktop_style{
+			display: none;
+		}
+	}
+	&.hglght__d{
+		@include tablet_style{
+			display: none;
+		}
+	}
+}
+.flex-wrp{
+	display: flex;
+	&.flex-wrp-c{
+		flex-direction: column;
+		
+	}
+	.flex-row{
+		justify-content: space-between;
+		margin-bottom: 1rem; 
+
+	}
+	.flex-img{
+		flex-basis: 25%;
+	}
+	.flex-txt{
+		flex-basis: 70%;
+	}
+	@include tablet_style{
+		.flex-row {
+			flex-direction: column;
+		}
+	}
+}
+
+.sct-des-center {
+	padding: 0 1rem 5% 1rem;
+}
+.v3-q.v3-q-1{
+	background-color:#FFF5D0;
+	.v3-q-inner{
+		background-color:#FFF5D0;
+	}
+}
+.v3-l{
+	@include desktop_style{
+		.half-bg-img{
+			@include background_set(center,contain);
+		}
+	}
+}
+.v3-q-1, .v3-q-2{
+	padding: 0;
+	text-align: center;
+	img{
+		max-width: 170px;
+		margin: 0 auto;
+	}
+	p{
+		margin: 0;
+	}
+	@include tablet_style{
+		width: 100vw;
+		margin: auto -2rem;
+
+	}
+}
+.v3-q-2{
+	padding: 1rem;
+}
+.v3-c-3{
+	.ma{
+		display: none;
+	}
+ 	ul{
+		 padding-left: 2rem;
+		 margin: 2rem 0;
+		 li{
+			 margin-bottom: 1.5rem;
+			 @include blt_pnt_style(50%, -1.8rem){
+				 transform: translatey(-50%);
+				 width: 20px;
+				 height: 20px;
+				@include background_set(center,contain,$bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/11/f-noun_Check-Mark_835.svg');
+			 };
+		 }
+	 }
+	 @include desktop_style{
+		.v3-c-inner{
+			padding: 3%;
+			background-color:$light-yellow;
+			@include absolute_box('.left-vid',50%,75%){
+				width: 53%;
+			};
+			
+		}
+		.v3-c-content{
+			padding: 5% 0;
+		}
+	 }
+	 @include max_min_style(1300px){
+		.v3-c-inner{
+			@include absolute_box('.left-vid',50%,75%){
+				width: 50%;
+			};
+			
+		}
+	 }
+	 @include tablet_style{
+		 margin-top: 1rem;
+	 }
+	 
+}
+.v3-m{
+ @include m_section();
+}
+.v3-m-4{
+	@include desktop_style{
+	.big-image{
+		width: 80%;
+		max-width: 1700px;
+		padding: 3%;	}
+}
+}
+.v3-m-4,.v3-q-5,.v3-q-10,.v3-e-11,.v3-c-12,.v3-d-15,.v3-l-16,.v3-q-17{
+	margin-bottom: 0.5rem;
+}
+.v3-q-5{
+	.mw-710{
+		max-width: 900px;
+	}
+}
+.v3-e-6{
+	@include desktop_style{
+		padding: 7% 0;
+	}
+}
+.v3-l-7,.v3-l-8,.v3-l-9{
+	@include desktop_style{
+		.half-bg-inner{
+			padding: 5% 2.5rem;
+		}
+	}
+}
+.v3-e-11{
+	.txt-wrpr, .three-across-item{
+		background-color: #FFF8FE;
+		margin: 0.5rem;
+		padding:2rem 1rem;
+	}
+	.three-across-items,.three-across-item{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.three-across-item{
+		
+		justify-content: space-between;
+		p{
+			text-align: left;
+		}
+	}
+	@include desktop_style{
+		padding:5% 1rem;
+		.three-across-top-text, .three-across-items{
+			max-width: 1200px;
+		}
+		.three-across-items{
+			align-items: stretch;
+			flex-direction: row;
+		}
+		
+	}
+	
+}
+.v3-c-12{
+	.ma {
+		display: none;
+	}
+	@include desktop_style{
+		padding: 7% 4%;
+		.v3-c-inner{
+			background-color:#FFF5D0;
+			padding: 0 4%;
+			@include absolute_box('.wp-image-1363',37%,73%,){
+				width: 50%;
+			};
+		}
+		.v3-c-content{
+			text-align: center;
+			padding: 5% 0;
+			max-width: 47%;
+		}
+		.txt-in{
+			margin-bottom: 11%;
+		}
+	}
+}
+.v3-e-13{
+ .three-across-item{
+	 background-color: #FFF8FE;
+ }
+ .offer-list{
+	 font-size: 0.9em;
+	 li{
+		 margin: auto;
+		 max-width: 100%;
+		 width: max-content;
+	 }
+ }
+ @include desktop_style{
+	.three-across-items{
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+	.three-across-item{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 1rem;
+	}
+
+ }
+}
+.v3-l-16{
+	.up-drp{
+		font-weight: 800;
+	}
+	ul{
+		list-style-type: none;
+		
+		
+		li{
+			margin-bottom: 1.2rem;
+		 @include blt_pnt_style(9px,-1rem){
+			 background-color: #000;
+			 width: 9px;
+			 height: 9px;
+			 transform: rotate(45deg);
+		 }
+		 @include blt_pnt_style(4.5px,-1.3rem,$objct:after){
+			background-color: #fff;
+			width: 9px;
+			height: 15px;
+			transition: 0.1s;
+		}
+		}
+	}
+}
+.v3-q-17{
+	text-align: center;
+	background: rgb(255,245,208);
+background: linear-gradient(60deg, rgba(255,245,208,1) 0%, #F2B1D4 100%);
+}
+.v3-d-18 {
+
+	@include desktop_style{
+		.v3-d-top-content {
+			max-width: 1200px;
+		    margin:0 auto;
+			padding: 0 1rem;
+			text-align: left;
+		}
+	}
+	.footer-txt-icon {
+		margin-left: 3rem;
+		padding-left: 0.5rem;
+		@include blt_pnt_style(9px, -2.5rem){
+			height: 2rem;
+			width: 2rem;
+		};
+		
+		&.icon-1{
+			&::before{
+				@include background_set(center,contain,$bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/11/f-Mail_Icon.svg')
+			}
+		}
+		&.icon-2{
+			&::before{
+				@include background_set(center,contain,$bg-img:'https://vip.shopetee.com/wp-content/uploads/2019/11/f-Pin_Icon.svg')
+			}
+		}
+	}
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}

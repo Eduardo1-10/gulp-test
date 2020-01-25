@@ -1,0 +1,245 @@
+/*Variables*/
+$body-color: #000;
+$max-width:1300px;
+/*Button objects*/
+$v3b1: (
+btn-bg:#E97F00,
+btn-txt:#fff,
+btn-bg-hvr:#fff,
+btn-brdr:#E97F00,
+input-plchldr:rgb(43, 43, 43),
+input-txt:rgb(43, 43, 43),
+input-brdr:#fff,
+input-bg:#fff
+);
+$v3n: (
+	btn-bg:#E97F00,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:#E97F00,
+	input-plchldr:rgb(43, 43, 43),
+	input-txt:rgb(43, 43, 43),
+	input-brdr:#F7F7F7,
+	input-bg:#F7F7F7
+);
+$modal: (
+	btn-bg:#E97F00,
+	btn-txt:#fff,
+	btn-bg-hvr:#fff,
+	btn-brdr:#E97F00,
+);
+
+@import '_partial1'; /*brings the mixings in*/
+
+.page-wrap{
+	overflow:hidden;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: $body-color;
+}
+.v3-wrap{
+	h1, h2{
+		font-family: 'Roboto', sans-serif;
+		font-weight: 900;
+	}
+	h1{
+		@include h_resize(2.9rem, 1300px 1235px 1100px 375px);
+	}
+	h2{
+		@include h_resize(2.7rem, 1300px 1235px 1100px 410px 352px);
+	}
+	h3{
+		font-size: 1.2rem;
+		font-weight: 900;
+	}
+	h5{
+		font-weight: 900;
+	}
+	.sub-hdr{
+	display:block;
+	font-size:1rem;
+	text-transform: uppercase;
+	}
+	.full-lightgray-bg-d{
+		@include desktop_style{
+			.v3-l{
+				background-color: #F8F9FA;
+			}
+		}
+	}
+	.half-lightgray-bg {
+		@include t_section($l-width:$max-width 90% auto,$img-basis:49.5%,$text-basis:49.5%,$no_padding:false){
+			justify-content: space-between;
+		};
+		@include desktop_style{
+			margin: 3% 0;
+			.half-bg-inner-t{
+				background-color: #F8F9FA;
+			}
+
+		}
+	}
+	.full-lightgray-bg-m {
+		@include tablet_style{
+			background-color: #F8F9FA;
+		}
+	}
+	.check-icon{
+		padding-left: 2rem;
+		li{
+			@include blt-pnt-style(9px,-1rem){
+				list-style-type: none;
+				width: 17px;
+				height: 17px;
+				@include background_set(center,contain,$bg-img:'https://tomsfinds.com/calfpro/wp-content/uploads/sites/344/2020/01/f-Check_Icon.svg');
+				margin-bottom: 1rem;
+			}
+		}
+		&.cross-icon{
+			li::before{
+				@include background_set(center,contain,$bg-img:'https://tomsfinds.com/calfpro/wp-content/uploads/sites/344/2020/01/f-X_ICON.svg');
+			}
+		}
+	}
+}
+
+.v3-q-1{
+	img{
+		margin: auto;
+		max-width: 170px;
+	}
+	padding: 0 1rem;
+}
+.v3-t-2-wrap{
+	@include t_section($text-basis:65%,$mobile-direction:column-reverse,$no_padding:false);
+	@include desktop_style{
+		background-color: #F8F9FA;
+		.half-bg-inner-t{
+			@include absolute_box('.hero-absolute-img',50%,100%, -100% -50%){
+				height: 100%;
+				width: 35%;
+				&.hero-calf-gif{
+					@include background_set(center,cover,$bg-img:'https://tomsfinds.com/calfpro/wp-content/uploads/sites/344/2020/01/CalfPro_Pulse.gif');
+				}
+			};
+		}
+		.half-bg-content-t{
+			margin: 0;
+			.hero-text-wrap{
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+	@include tablet_style{
+		padding-bottom: 1rem;
+	}
+}
+.v3-n-3 {
+	@include button_style ($v3b1,$rounded-corners:true);
+	@include input_box_style ($v3b1,$rounded-corners:true);
+	@include n_content (#fff);
+	background-color: #222631;
+	@include desktop_style{
+		background-color: #fff;
+		@include button_style ($v3n,$rounded-corners:true);
+		@include input_box_style ($v3n,$rounded-corners:true);
+		@include n_content (#000);
+	}
+}
+.v3-l-6{
+	.sct-4-space{
+		
+		.blue-hdr{
+			color: #5EC3DD;
+			text-transform: uppercase;
+			margin-bottom: -1rem;
+		}
+		@include desktop_style{
+			margin-bottom: 1.5rem;
+		}
+		@include tablet_style{
+			margin-bottom: 1rem;
+		}
+	}
+}
+.v3-m-7,.v3-m-4{
+	padding-bottom: 0;
+	h2{
+		margin-bottom: 0;
+	}
+}
+.v3-m-9,.v3-m-10{
+	@include desktop_style{
+		text-align: center;
+	}
+}
+.v3-t-11-wrap{
+	@include t_section($l-width:$max-width 90% auto,$text-basis: 18%, $img-basis:80%,$no_padding:false){
+		justify-content: space-between;
+		};
+		@include desktop_style{
+			margin: 3% auto;
+			.half-bg-img-t{
+				@include background_set(center,100% auto);
+			}
+			.half-bg-inner-t{
+				min-width: 230px;
+				padding: 0 2rem ;
+				background-color:#F8F9FA;
+				margin-right: 0.7rem;
+			}
+		}
+}
+.v3-t-12-wrap{
+	@include t_section($l-width:$max-width 90% auto,$no_padding:false,$mobile-direction:column-reverse);
+	@include desktop_style{
+		.half-bg-img-t{
+			margin: 3%;
+		}
+	}
+}
+.v3-t-13-wrap {
+	@include t_section($mobile-direction:column-reverse,$no_padding:false);
+	ul{
+		@extend %desktop-only;
+	}
+}
+.v3-m-14{
+	margin-top: 0;
+	padding-top: 0;
+	ul{
+		margin-top: 0;
+		padding-top:0;
+	}
+}
+.v3-t-15-wrap {
+	@include t_section($mobile-direction:column-reverse,$no_padding:false);
+	@include tablet_style{
+		padding-bottom: 1rem;
+	}
+
+}
+.v3-n:last-child {
+	background-color: #222631;
+	@include button_style ($v3n,$rounded-corners:true);
+	@include input_box_style ($v3n,$rounded-corners:true);
+	@include n_content (#fff);
+}
+
+.modal {
+	.modal-inner {
+		.modal-text {
+			h2 {
+				font-size: 2.3rem !important;
+			}
+			h2,
+			p {
+				color: #323438 !important;
+			}
+		}
+	}
+	@include button_style ($modal,false);
+}
